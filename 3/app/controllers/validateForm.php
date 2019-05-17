@@ -10,10 +10,10 @@ $color_pattern = '/marron|negro|amarillo|rojo|calvo|\s/';
 $horario_pattern = '/.:00|.:15|.:30|.:45/';
 
 $fecha_actual = new DateTime('America/Argentina/Buenos_Aires');
-$fecha_nacimiento_enviada = new DateTime($_POST['fecha-nacimiento']);
-$fecha_turno_enviada = new DateTime($_POST['fecha-turno']);
+$fecha_nacimiento_enviada = new DateTime($_POST['fecha_nacimiento']);
+$fecha_turno_enviada = new DateTime($_POST['fecha_turno']);
 
-$horario_enviado = new DateTime($_POST['hora-turno']);
+$horario_enviado = new DateTime($_POST['hora_turno']);
 $horario_inicio = new DateTime('08:00');
 $horario_fin = new DateTime('17:00');
 
@@ -34,10 +34,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   if (!preg_match($altura_pattern, $_POST['altura'])) {
     $CampoError .= 'altura, ';
   }
-  if (!preg_match($talla_pattern, $_POST['talla-calzado']) || ($_POST['talla-calzado'] < 20 || $_POST['talla-calzado'] > 45)) {
+  if (!preg_match($talla_pattern, $_POST['talla_calzado']) || ($_POST['talla_calzado'] < 20 || $_POST['talla_calzado'] > 45)) {
     $CampoError .= 'talla de calzado, ';
   }
-  if (!preg_match($color_pattern, $_POST['color-pelo'])) {
+  if (!preg_match($color_pattern, $_POST['color_pelo'])) {
     $CampoError .= 'color de pelo, ';
   }
   if ($fecha_nacimiento_enviada > $fecha_actual) {
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
   if ($fecha_turno_enviada < $fecha_actual) {
     $CampoError .= 'fecha del turno, ';
   }
-  if (!preg_match($horario_pattern,$_POST['hora-turno']) || ($horario_inicio > $horario_enviado) || ($horario_fin < $horario_enviado)) {
+  if (!preg_match($horario_pattern,$_POST['hora_turno']) || ($horario_inicio > $horario_enviado) || ($horario_fin < $horario_enviado)) {
     $CampoError .= 'hora del turno, ';
   }
 }

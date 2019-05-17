@@ -15,17 +15,17 @@
 <h2>Reservar Turno</h2>
 <form action="/turnos/validate" method="POST">
    <div class="field">
-        <label> Nombre paciente:
+        <label for="paciente"> Nombre paciente:
             <input type="text" name="paciente" required >
         </label>
     </div>
     <div class="field">
-        <label>   email:
+        <label for="email">   email:
             <input type="email" name="email" required >
         </label>
     </div>
     <div class="field">
-        <label>   telefono:
+        <label for="telefono">   telefono:
             <input type="text" name="telefono" required >
         </label>
     </div>
@@ -36,8 +36,8 @@
         </label>
       </div>
       <div class="field">
-        <label for="talla-calzado" >Talla de calzado: 
-                <input name="talla-calzado" type="number" min=20 max=50>
+        <label for="talla_calzado" >Talla de calzado: 
+                <input name="talla_calzado" type="number" min=20 max=50>
         </label>
       </div>
       <div class="field">
@@ -46,13 +46,13 @@
         </label>
       </div>
       <div class="field">
-        <label for="fecha-nacimiento">fecha de nacimiento: 
-            <input name="fecha-nacimiento" type="date" required="required">
+        <label for="fecha_nacimiento">fecha de nacimiento: 
+            <input name="fecha_nacimiento" type="date" required="required">
         </label>
       </div>
       <div class="field">
-        <label for="color-pelo" >Color de pelo: 
-            <select name="color-pelo">
+        <label for="color_pelo" >Color de pelo: 
+            <select name="color_pelo">
               <option  value="marron">Marrón</option>
               <option  value="negro">Negro</option>
               <option  value="amarillo">Amarillo</option>
@@ -63,13 +63,13 @@
       </div>
     
     <div class="field">
-        <label for="fecha-turno"> fecha:
-            <input type="date" name="fecha-turno" required >
+        <label for="fecha_turno"> fecha:
+            <input type="date" name="fecha_turno" required >
         </label>
     </div>
     <div class="field">
-        <label for="hora-turno">   hora:
-            <input type="time" name="hora-turno" >
+        <label for="hora_turno">   hora:
+            <input type="time" name="hora_turno" >
         </label>
     </div>
        

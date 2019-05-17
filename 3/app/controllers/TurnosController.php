@@ -34,9 +34,10 @@ class TurnosController extends Controller
         
         if ($CampoError == "") {
             
-            $resultado  = $this->save();
+            $result = $this->save();
             
-            return view('turnoReservado', ["turno" => $resultado]);
+            return view('turnoReservado', ['turnoX' => $result]);
+        
         } else {
              return view('camposErroneos', ['errores' => $CampoError]);        
         }
@@ -47,15 +48,15 @@ class TurnosController extends Controller
     {
         $turno = [
                     'paciente' => ($_POST['paciente']),
-                    'fecha-turno' => $_POST['fecha-turno'],
-                    'hora-turno' => $_POST['hora-turno'],
-                    'telefono' => $_POST['telefono'],
                     'email' => $_POST['email'],
+                    'telefono' => $_POST['telefono'],
                     'edad' => $_POST['edad'],
-                    'talla-calzado' => $_POST['talla-calzado'],
+                    'talla_calzado' => $_POST['talla_calzado'],
                     'altura' => $_POST['altura'],
-                    'fecha-nacimiento' => $_POST['fecha-nacimiento'],
-                    'color-pelo' => $_POST['color-pelo']
+                    'fecha_nacimiento' => $_POST['fecha_nacimiento'],
+                    'color_pelo' => $_POST['color_pelo'],
+                    'fecha_turno' => $_POST['fecha_turno'],
+                    'hora_turno' => $_POST['hora_turno'],
                 ];
         $this->model->insert($turno);
         return $turno;
