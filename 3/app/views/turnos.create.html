@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block title %}Crear Tarea Nueva{% endblock %}
+
+{% block header %}
+    {{ include('partials/nav.html') }}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <meta name="keywords" content="PAW,2018,Templates,PHP">
+{% endblock %}
+
+{% block main %}
+<h2>Reservar Turno</h2>
+<form action="/turnos/validate" method="POST">
+   <div class="field">
+        <label> Nombre paciente:
+            <input type="text" name="paciente" required >
+        </label>
+    </div>
+    <div class="field">
+        <label>   email:
+            <input type="email" name="email" required >
+        </label>
+    </div>
+    <div class="field">
+        <label>   telefono:
+            <input type="text" name="telefono" required >
+        </label>
+    </div>
+    
+      <div class="field">
+        <label for="edad" >Edad: 
+            <input name="edad" type="number" min=0 max=130>
+        </label>
+      </div>
+      <div class="field">
+        <label for="talla-calzado" >Talla de calzado: 
+                <input name="talla-calzado" type="number" min=20 max=50>
+        </label>
+      </div>
+      <div class="field">
+        <label for="altura" >Altura: 
+            <input name="altura" type="number">
+        </label>
+      </div>
+      <div class="field">
+        <label for="fecha-nacimiento">fecha de nacimiento: 
+            <input name="fecha-nacimiento" type="date" required="required">
+        </label>
+      </div>
+      <div class="field">
+        <label for="color-pelo" >Color de pelo: 
+            <select name="color-pelo">
+              <option  value="marron">Marrón</option>
+              <option  value="negro">Negro</option>
+              <option  value="amarillo">Amarillo</option>
+              <option  value="rojo">Rojo</option>
+              <option  value="calvo">Calvo</option>
+            </select>
+        </label>
+      </div>
+    
+    <div class="field">
+        <label for="fecha-turno"> fecha:
+            <input type="date" name="fecha-turno" required >
+        </label>
+    </div>
+    <div class="field">
+        <label for="hora-turno">   hora:
+            <input type="time" name="hora-turno" >
+        </label>
+    </div>
+       
+    <input type="submit" name="Enviar">
+    <input  class="controls" type="reset" value="Resetear">
+</form>
+{% endblock %}

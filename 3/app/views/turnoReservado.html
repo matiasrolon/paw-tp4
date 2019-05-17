@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Turno Reservado{% endblock %}
+
+{% block header %}
+    {{ include('partials/nav.html') }}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <meta name="keywords" content="PAW,2018,Templates,PHP">
+{% endblock %}
+
+{% block main %}
+<h2>Turno reservado</h2>
+
+ <div class="turno">
+   <div class="field">
+        <label> 
+           <b>Paciente:</b>
+            {{turno.paciente}}
+        </label>
+    </div>
+    <div class="field">
+        <label>  <b> tel: </b>
+            {{turno.telefono}}
+        </label>
+    </div>
+    <div class="field">
+        <label>  <b> email: </b>
+        {{turno.email}}
+        </label>
+    </div>
+    <div class="field">
+        <label>  <b> edad: </b>
+            {{turno.edad}}
+        </label>
+    </div>
+    <div class="field">
+        <label>  <b> talla-calzado: </b>
+        {{turno.talla-calzado}}
+        </label>
+    </div>
+    <div class="field">
+        <label>  <b> altura: </b>
+        {{turno.altura}}
+        </label>
+    </div>
+    <div class="field">
+        <label>  <b> Fecha de Nacimiento: </b>
+        {{turno.fecha-nacimiento}}
+        </label>
+    </div>
+    <div class="field">
+        <label>  <b> Color de pelo: </b>
+        {{turno.color-pelo}}
+        </label>
+    </div>
+    <div class="field">
+        <label> <b> fecha del turno: </b>
+                    {{turno.fecha-turno}}
+        </label>
+    </div>
+    <div class="field">
+        <label>  <b> hora del turno: </b>
+                {{turno.hora-turno}}
+        </label>
+    </div>
+</div>    
+<h3>Gracias por atenderse con nosotros. </h3>
+
+{% endblock %}

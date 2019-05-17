@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Turno Reservado{% endblock %}
+
+{% block header %}
+    {{ include('partials/nav.html') }}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <meta name="keywords" content="PAW,2018,Templates,PHP">
+{% endblock %}
+
+{% block main %}
+<h2>Turno NO reservado</h2>
+<h3>Los siguientes campos son erroneos: {{ errores }} </h3>
+
+{% endblock %}
