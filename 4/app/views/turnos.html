@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Lista de Tareas{% endblock %}
+
+{% block header %}
+    {{ include('partials/nav.html') }}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <meta name="keywords" content="PAW,2018,Templates,PHP">
+{% endblock %}
+
+{% block main %}
+
+<h2>Turnos:</h2>
+<table>
+<tr>
+    <td> id </td>
+    <td> paciente </td>
+    <td> email </td>
+    <td> telefono </td>
+    <td> edad </td>
+    <td> talla_calzado</td>
+    <td> altura </td>
+    <td> fecha_nacimiento</td>
+    <td> color_pelo </td>
+    <td> fecha_turno </td>
+    <td> hora_turno </td>
+    <td> diagnostico </td>
+</tr>
+{% for turno in turnos %}
+<tr>
+    <td>{{ turno.id }}</td>
+    <td>{{ turno.paciente }}</td>
+    <td>{{ turno.email }}</td>
+    <td>{{ turno.telefono }}</td>
+    <td>{{ turno.edad }}</td>
+    <td>{{ turno.talla_calzado }}</td>
+    <td>{{ turno.altura }}</td>
+    <td>{{ turno.fecha_nacimiento }}</td>
+    <td>{{ turno.color_pelo }}</td>
+    <td>{{ turno.fecha_turno }}</td>
+    <td>{{ turno.hora_turno }}</td>
+</tr>
+{% else %}
+<span>No hay turnos registrados</span>
+{% endfor %}
+</table>
+{% endblock %}
