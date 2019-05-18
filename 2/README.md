@@ -8,5 +8,6 @@ Se creo el objeto Conexion que se encargara de gestionar la conexión a la base 
 
 
 ### Ejecución
-<p>1-Se debe crear Base de Datos ejecutando el SQL que se encuentra en la carpeta SQL.<br>
-  2-Se debe ejecutar el comando php -S localhost:puerto ubicado en la carpeta que contiene el archivo index.php.
+<p>1-Se debe crear Base de Datos ejecutando el SQL que se encuentra en la carpeta SQL.<br> 
+  2-Se debe ejecutar el comando php -S localhost:puerto ubicado en la carpeta que contiene el archivo index.php.<br>
+  3-Luego ingresar a http://localhost:puerto
