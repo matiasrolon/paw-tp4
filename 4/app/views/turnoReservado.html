@@ -9,6 +9,7 @@
 {% block head %}
     {{ parent() }}
     <meta name="keywords" content="PAW,2018,Templates,PHP">
+            <link rel="stylesheet" href="public/style.css">
 {% endblock %}
 
 {% block main %}
@@ -68,7 +69,7 @@
     </div>
     <div class="field">
         <label>  <b> diagnostico: </b>
-        <img src="data:image/png;base64,{{diag}}">
+        <div> <img src="data:image/png;base64,{{diag}}"></div>
         </label>
     </div>
 </div>    

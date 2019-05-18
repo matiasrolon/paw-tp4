@@ -18,10 +18,14 @@ class TurnosController extends Controller
     public function index()
     {
         $turnos = $this->model->get();
-        $diagnosticos = $this->model->getAllDiagnosticos();
-        //foreach ($diagnosticos as $diag){ $diag["diagnostico"] =  base64_encode($diag["diagnostico"]); }
-        //print_r ($diagnosticos);
-        return view('turnos', ['turnos'=>$turnos,'diagnosticos'=>$diagnosticos]);
+        return view('turnos', ['turnos'=>$turnos]);
+    }
+    
+    public function showTurno(){
+        $turno = $this->model->getTurno($_GET["id"]);
+        //print_r($turno[0]);
+        $diag = base64_encode($turno[0]->diagnostico);
+        return view('ficha-turno', ['turnoX' => $turno[0], 'diag'=>$diag]);
     }
 
     public function create()
@@ -37,12 +41,9 @@ class TurnosController extends Controller
         require 'app/controllers/validateImage.php';
         
         if ($CampoError == "") {
-            
             $result = $this->save();
-            
             $diag = base64_encode($result['diagnostico']);
             return view('turnoReservado', ['turnoX' => $result, 'diag'=>$diag]);
-        
         } else {
              return view('camposErroneos', ['errores' => $CampoError]);        
         }

@@ -13,12 +13,17 @@ class Turnos extends Model
         return $this->db->selectAll($this->table);
     }
     
-    public function getAllDiagnosticos()
+    public function getDiagnostico($idTurno)
     {
         $atribute = 'diagnostico';
-        return $this->db->selectAtributeForAll($atribute, $this->table);
+        return $this->db->selectAtributeByID($idTurno,$atribute, $this->table);
     }
     
+    
+    public function getTurno($idTurno)
+    {
+        return $this->db->selectByID($idTurno, $this->table);
+    }
     
     public function insert(array $turno)
     {

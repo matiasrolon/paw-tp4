@@ -37,9 +37,17 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
-    public function selectAtributeForAll($atribute,$table)
+    public function selectAtributeByID($id,$atribute,$table)
     {
-        $statement = $this->pdo->prepare("select {$atribute} from {$table}");
+        $statement = $this->pdo->prepare("select {$atribute} from {$table} where id={$id}");
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
+    
+    
+    public function selectByID($id,$table)
+    {
+        $statement = $this->pdo->prepare("select * from {$table} where id={$id}");
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }

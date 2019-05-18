@@ -9,9 +9,14 @@
 {% block head %}
     {{ parent() }}
     <meta name="keywords" content="PAW,2018,Templates,PHP">
+            <link rel="stylesheet" href="public/style.css">
 {% endblock %}
 
 {% block main %}
+
+{% for diag in diagnosticos %}
+     <img src="data:image/png;base64,{{diag.diagnostico}}">
+{% endfor %}
 
 <h2>Turnos:</h2>
 <table>
@@ -27,7 +32,7 @@
     <td> color_pelo </td>
     <td> fecha_turno </td>
     <td> hora_turno </td>
-    <td> diagnostico </td>
+    <td> ficha </td>
 </tr>
 {% for turno in turnos %}
 <tr>
@@ -42,6 +47,8 @@
     <td>{{ turno.color_pelo }}</td>
     <td>{{ turno.fecha_turno }}</td>
     <td>{{ turno.hora_turno }}</td>
+    <td><a href="/turnos/ficha?id={{turno.id}}">  link </a> </td>
+    
 </tr>
 {% else %}
 <span>No hay turnos registrados</span>

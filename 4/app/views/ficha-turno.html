@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block title %}Turno Reservado{% endblock %}
+
+{% block header %}
+    {{ include('partials/nav.html') }}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <meta name="keywords" content="PAW,2018,Templates,PHP">
+        <link rel="stylesheet" href="public/style.css">
+{% endblock %}
+
+{% block main %}
+<h2>Informacion del turno: </h2>
+
+ <div class="turno">
+  <section class="persona">
+       <div class="field">
+            <label> 
+               <b>Paciente:</b>
+                {{turnoX.paciente}}
+            </label>
+        </div>
+        <div class="field">
+            <label>  <b> tel: </b>
+                {{turnoX.telefono}}
+            </label>
+        </div>
+        <div class="field">
+            <label>  <b> email: </b>
+            {{turnoX.email}}
+            </label>
+        </div>
+        <div class="field">
+            <label>  <b> edad: </b>
+                {{turnoX.edad}}
+            </label>
+        </div>
+        <div class="field">
+            <label>  <b> talla de calzado: </b>
+            {{turnoX.talla_calzado}}
+            </label>
+        </div>
+        <div class="field">
+            <label>  <b> altura: </b>
+            {{turnoX.altura}}
+            </label>
+        </div>
+        <div class="field">
+            <label>  <b> Fecha de Nacimiento: </b>
+            {{turnoX.fecha_nacimiento}}
+            </label>
+        </div>
+        <div class="field">
+            <label>  <b> Color de pelo: </b>
+            {{turnoX.color_pelo}}
+            </label>
+        </div>
+     </section>
+    <section class="turno">       
+        <div class="field">
+            <label> <b> fecha del turno: </b>
+                        {{turnoX.fecha_turno}}
+            </label>
+        </div>
+        <div class="field">
+            <label>  <b> hora del turno: </b>
+                    {{turnoX.hora_turno}}
+            </label>
+        </div>
+        <div class="field">
+            <label>  <b> diagnostico: </b>
+            <div> <img src="data:image/png;base64,{{diag}}"></div>
+            </label>
+        </div>
+    </section>    
+</div>    
+{% endblock %}
