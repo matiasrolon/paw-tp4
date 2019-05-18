@@ -20,20 +20,22 @@
 
 <h2>Turnos:</h2>
 <table>
-<tr>
-    <td> id </td>
-    <td> paciente </td>
-    <td> email </td>
-    <td> telefono </td>
-    <td> edad </td>
-    <td> talla_calzado</td>
-    <td> altura </td>
-    <td> fecha_nacimiento</td>
-    <td> color_pelo </td>
-    <td> fecha_turno </td>
-    <td> hora_turno </td>
-    <td> ficha </td>
-</tr>
+{% if turnos %}
+   <tr>
+        <td> id </td>
+        <td> paciente </td>
+        <td> email </td>
+        <td> telefono </td>
+        <td> edad </td>
+        <td> talla_calzado</td>
+        <td> altura </td>
+        <td> fecha_nacimiento</td>
+        <td> color_pelo </td>
+        <td> fecha_turno </td>
+        <td> hora_turno </td>
+        <td> ficha </td>
+    </tr>
+{% endif %}
 {% for turno in turnos %}
 <tr>
     <td>{{ turno.id }}</td>
