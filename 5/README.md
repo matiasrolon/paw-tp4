@@ -14,7 +14,7 @@ Se ocupa solo del almacenamiento de datos en distintos atributos y no de sus fun
 Asi, la solución mas inmediata es hacer que uno de los componentes hable el idioma del otro, en el caso mayormente adoptado de forma erronea, que el programa esté diseñado siguiendo el modelo de datos relacionales, adaptandose a el.
 El problema de esta arquitectura es que se desaprovechan las grandes ventajas de flexibilidad, facilidad de mantenimiento y facilidad de gestión de sistemas complejos que da la programación orientada a objetos y se vuelve muy dependiente de la estructura de los datos.
 
-### ORM
+### Solucion
 Un motor de persistencia ORM es un componente de software que abstrae al programador la comunicacion entre estos esquemas de base de datos relacional y un modelo de programacion orientado a objetos, traduciendo entre los dos formatos de datos: de registros (tablas) a objetos y de objetos a registros. 
 
 La ventaja principal de estos sistemas es que resuelve la conversion de datos entre bd y aplicacion, haciendo que ya no dependa del programador, reduciendo a su vez la cantidad de código necesario para lograr la persistencia de los objetos 
