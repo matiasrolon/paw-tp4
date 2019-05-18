@@ -1,0 +1,1 @@
+CREATE TABLE `pawtp4turnos`.`turnos` ( `id` INT NOT NULL AUTO_INCREMENT , `paciente` TEXT NOT NULL , `email` TEXT NOT NULL , `telefono` TEXT NOT NULL , `edad` INT NOT NULL , `talla_calzado` INT NOT NULL , `altura` INT NOT NULL , `fecha_nacimiento` DATE NOT NULL , `color_pelo` TEXT NOT NULL , `fecha_turno` DATE NOT NULL , `hora_turno` DATETIME NOT NULL , PRIMARY KEY (`id`))
