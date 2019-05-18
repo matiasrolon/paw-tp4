@@ -7,4 +7,5 @@ Se instalo el Sistema Gestor de Base de Datos MySQL versión 5.7.24. Para poder 
 
 ### Ejecución
 <p>1-Se debe crear Base de Datos ejecutando el SQL que se encuentra en la carpeta SQL.<br>
-  2-Se debe ejecutar el comando php -S localhost:puerto ubicado en la carpeta que contiene el archivo index.php.
+  2-Se debe ejecutar el comando php -S localhost:puerto ubicado en la carpeta que contiene el archivo index.php.<br>
+  3-Luego ingresar a http://localhost:puerto
