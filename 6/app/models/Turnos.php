@@ -22,4 +22,13 @@ class Turnos extends Model
         $this->db->delete($this->table, $id);
     }
     
+    public function getId($id){
+        return $this->db->select($this->table, $id);
+        
+    
+    }
+    
+    public function upload(array $turno,$id){
+        $this->db->upload($this->table,$turno,$id);
+    }
 }

@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+
+{% block title %}Eliminar turno{% endblock %}
+
+{% block header %}
+    {{ include('partials/nav.html') }}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <meta name="keywords" content="PAW,2018,Templates,PHP">
+{% endblock %}
+
+{% block main %}
+<h2>Turnos modificar</h2>
+<table>
+<tr>
+    <td> id </td>
+    <td> paciente </td>
+    <td> email </td>
+    <td> telefono </td>
+    <td> edad </td>
+    <td> talla_calzado</td>
+    <td> altura </td>
+    <td> fecha_nacimiento</td>
+    <td> color_pelo </td>
+    <td> fecha_turno </td>
+    <td> hora_turno </td>
+</tr>
+{% for turno in turnos %}
+<tr>
+    <td>{{ turno.id }}</td>
+    <td>{{ turno.paciente }}</td>
+    <td>{{ turno.email }}</td>
+    <td>{{ turno.telefono }}</td>
+    <td>{{ turno.edad }}</td>
+    <td>{{ turno.talla_calzado }}</td>
+    <td>{{ turno.altura }}</td>
+    <td>{{ turno.fecha_nacimiento }}</td>
+    <td>{{ turno.color_pelo }}</td>
+    <td>{{ turno.fecha_turno }}</td>
+    <td>{{ turno.hora_turno }}</td>
+</tr>
+{% else %}
+<span>No hay turnos registrados</span>
+{% endfor %}
+</table>
+
+<form action="/turnos/validateCambio" method="POST">
+   <div class="field">
+        <label for="id"> ID de turno a modificar:
+            <input type="number" name="id" required >
+        </label>
+    <div class="field">
+        <label for="paciente"> Nombre paciente:
+            <input type="text" name="paciente" required >
+        </label>
+    </div>
+    <div class="field">
+        <label for="email">   email:
+            <input type="email" name="email" required >
+        </label>
+    </div>
+    <div class="field">
+        <label for="telefono">   telefono:
+            <input type="text" name="telefono" required >
+        </label>
+    </div>
+    
+      <div class="field">
+        <label for="edad" >Edad: 
+            <input name="edad" type="number" min=0 max=130>
+        </label>
+      </div>
+      <div class="field">
+        <label for="talla_calzado" >Talla de calzado: 
+                <input name="talla_calzado" type="number" min=20 max=50>
+        </label>
+      </div>
+      <div class="field">
+        <label for="altura" >Altura: 
+            <input name="altura" type="number">
+        </label>
+      </div>
+      <div class="field">
+        <label for="fecha_nacimiento">fecha de nacimiento: 
+            <input name="fecha_nacimiento" type="date" required="required">
+        </label>
+      </div>
+      <div class="field">
+        <label for="color_pelo" >Color de pelo: 
+            <select name="color_pelo">
+              <option  value="marron">Marrón</option>
+              <option  value="negro">Negro</option>
+              <option  value="amarillo">Amarillo</option>
+              <option  value="rojo">Rojo</option>
+              <option  value="calvo">Calvo</option>
+            </select>
+        </label>
+      </div>
+    
+    <div class="field">
+        <label for="fecha_turno"> fecha:
+            <input type="date" name="fecha_turno" required >
+        </label>
+    </div>
+    <div class="field">
+        <label for="hora_turno">   hora:
+            <input type="time" name="hora_turno" >
+        </label>
+    </div> 
+    </div>
+    <input type="submit" name="Enviar">
+</form>
+
+
+{% endblock %}

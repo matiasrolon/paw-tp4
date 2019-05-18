@@ -8,8 +8,7 @@ agregados para ser utilizado como material de PAW - UNLu.
  - Clonar el repositorio
  - Crear un schema de base de datos con algun cliente MySQL
  - Ejecutar los migrations del directorio `sql/` en orden
- - Crear un archivo `config.php` (Hay un ejemplo para copiar en `config.php.example`)
-  - Configurar la base de datos creada y los usuarios correspondientes
+ - Crear un archivo `config.php` 
  - Ejecutar `composer install`
 
 ### Aclaración

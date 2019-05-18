@@ -35,6 +35,7 @@ class __TwigTemplate_bbe4a72da1951c38efd61304b56a292c1648b28f164ba0c9e609b234455
                <li><a href=\"/turnos\">ver Turnos</a></li>
                 <li><a href=\"/turnos/create\">Crear Turnos</a></li>
                 <li><a href=\"/turnos/delete\">Eliminar Turno</a></li>
+                <li><a href=\"/turnos/modificar\">Modificar Turno</a></li>
            </ul>
         </li>
     </ul>
@@ -62,6 +63,7 @@ class __TwigTemplate_bbe4a72da1951c38efd61304b56a292c1648b28f164ba0c9e609b234455
                <li><a href=\"/turnos\">ver Turnos</a></li>
                 <li><a href=\"/turnos/create\">Crear Turnos</a></li>
                 <li><a href=\"/turnos/delete\">Eliminar Turno</a></li>
+                <li><a href=\"/turnos/modificar\">Modificar Turno</a></li>
            </ul>
         </li>
     </ul>

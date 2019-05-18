@@ -36,6 +36,12 @@ class QueryBuilder
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
+    
+    public function select($table,$id){
+        $statement = $this->pdo->prepare("select * from {$table} where id = {$id}");
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
 
     /**
      * Insert a record into a table.
@@ -46,13 +52,31 @@ class QueryBuilder
     public function insert($table, $parameters)
     {
         $parameters = $this->cleanParameterName($parameters);
+        echo $parameters['fecha_nacimiento'];
         $sql = sprintf(
             'insert into %s (%s) values (%s)',
             $table,
             implode(', ', array_keys($parameters)),
             ':' . implode(', :', array_keys($parameters))
         );
-
+        echo $sql;
+        try {
+            $statement = $this->pdo->prepare($sql);
+            $statement->execute($parameters);
+        } catch (Exception $e) {
+            $this->sendToLog($e);
+        }
+    }
+    
+    public function upload($table, $parameters, $id)
+    {
+        $parameters = $this->cleanParameterName($parameters);
+        $sql="UPDATE {$table} SET paciente = :paciente,email = :email,
+        telefono = :telefono,edad = :edad,talla_calzado = :talla_calzado,
+        altura = :altura,fecha_nacimiento = :fecha_nacimiento,color_pelo = :color_pelo,
+        fecha_turno = :fecha_turno,hora_turno = :hora_turno WHERE id = {$id}";
+        
+        
         try {
             $statement = $this->pdo->prepare($sql);
             $statement->execute($parameters);

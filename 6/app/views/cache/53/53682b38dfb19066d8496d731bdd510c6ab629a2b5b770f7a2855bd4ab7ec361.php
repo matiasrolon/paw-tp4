@@ -1,7 +1,7 @@
 <?php
 
-/* turnos.delete.html */
-class __TwigTemplate_731ee2aaf806b1fa1ef0e0d0e5cb00df84b2378c226b55db5d5e5a8ab7fc39c3 extends Twig_Template
+/* turnos.modificar.html */
+class __TwigTemplate_6ec57d7621c2fed1b4c0c3092f425686c4567e8e4fa9ed57ff03b93228747ca2 extends Twig_Template
 {
     private $source;
 
@@ -12,7 +12,7 @@ class __TwigTemplate_731ee2aaf806b1fa1ef0e0d0e5cb00df84b2378c226b55db5d5e5a8ab7f
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html", "turnos.delete.html", 1);
+        $this->parent = $this->loadTemplate("base.html", "turnos.modificar.html", 1);
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'header' => array($this, 'block_header'),
@@ -62,17 +62,7 @@ class __TwigTemplate_731ee2aaf806b1fa1ef0e0d0e5cb00df84b2378c226b55db5d5e5a8ab7f
     public function block_main($context, array $blocks = array())
     {
         // line 15
-        echo "<h2>Turnos eliminar</h2>
-
-<form action=\"/turnos/borrar\" method=\"POST\">
-   <div class=\"field\">
-        <label for=\"id\"> ID a eliminar:
-            <input type=\"number\" name=\"id\" required >
-        </label>
-    </div>
-    <input type=\"submit\" name=\"Enviar\">
-</form>
-
+        echo "<h2>Turnos modificar</h2>
 <table>
 <tr>
     <td> id </td>
@@ -88,55 +78,55 @@ class __TwigTemplate_731ee2aaf806b1fa1ef0e0d0e5cb00df84b2378c226b55db5d5e5a8ab7f
     <td> hora_turno </td>
 </tr>
 ";
-        // line 40
+        // line 30
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["turnos"] ?? null));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["turno"]) {
-            // line 41
+            // line 31
             echo "<tr>
     <td>";
-            // line 42
+            // line 32
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["turno"], "id", array()), "html", null, true);
             echo "</td>
     <td>";
-            // line 43
+            // line 33
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["turno"], "paciente", array()), "html", null, true);
             echo "</td>
     <td>";
-            // line 44
+            // line 34
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["turno"], "email", array()), "html", null, true);
             echo "</td>
     <td>";
-            // line 45
+            // line 35
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["turno"], "telefono", array()), "html", null, true);
             echo "</td>
     <td>";
-            // line 46
+            // line 36
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["turno"], "edad", array()), "html", null, true);
             echo "</td>
     <td>";
-            // line 47
+            // line 37
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["turno"], "talla_calzado", array()), "html", null, true);
             echo "</td>
     <td>";
-            // line 48
+            // line 38
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["turno"], "altura", array()), "html", null, true);
             echo "</td>
     <td>";
-            // line 49
+            // line 39
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["turno"], "fecha_nacimiento", array()), "html", null, true);
             echo "</td>
     <td>";
-            // line 50
+            // line 40
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["turno"], "color_pelo", array()), "html", null, true);
             echo "</td>
     <td>";
-            // line 51
+            // line 41
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["turno"], "fecha_turno", array()), "html", null, true);
             echo "</td>
     <td>";
-            // line 52
+            // line 42
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["turno"], "hora_turno", array()), "html", null, true);
             echo "</td>
 </tr>
@@ -144,21 +134,90 @@ class __TwigTemplate_731ee2aaf806b1fa1ef0e0d0e5cb00df84b2378c226b55db5d5e5a8ab7f
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 55
+            // line 45
             echo "<span>No hay turnos registrados</span>
 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['turno'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 57
+        // line 47
         echo "</table>
+
+<form action=\"/turnos/validateCambio\" method=\"POST\">
+   <div class=\"field\">
+        <label for=\"id\"> ID de turno a modificar:
+            <input type=\"number\" name=\"id\" required >
+        </label>
+    <div class=\"field\">
+        <label for=\"paciente\"> Nombre paciente:
+            <input type=\"text\" name=\"paciente\" required >
+        </label>
+    </div>
+    <div class=\"field\">
+        <label for=\"email\">   email:
+            <input type=\"email\" name=\"email\" required >
+        </label>
+    </div>
+    <div class=\"field\">
+        <label for=\"telefono\">   telefono:
+            <input type=\"text\" name=\"telefono\" required >
+        </label>
+    </div>
+    
+      <div class=\"field\">
+        <label for=\"edad\" >Edad: 
+            <input name=\"edad\" type=\"number\" min=0 max=130>
+        </label>
+      </div>
+      <div class=\"field\">
+        <label for=\"talla_calzado\" >Talla de calzado: 
+                <input name=\"talla_calzado\" type=\"number\" min=20 max=50>
+        </label>
+      </div>
+      <div class=\"field\">
+        <label for=\"altura\" >Altura: 
+            <input name=\"altura\" type=\"number\">
+        </label>
+      </div>
+      <div class=\"field\">
+        <label for=\"fecha_nacimiento\">fecha de nacimiento: 
+            <input name=\"fecha_nacimiento\" type=\"date\" required=\"required\">
+        </label>
+      </div>
+      <div class=\"field\">
+        <label for=\"color_pelo\" >Color de pelo: 
+            <select name=\"color_pelo\">
+              <option  value=\"marron\">Marrón</option>
+              <option  value=\"negro\">Negro</option>
+              <option  value=\"amarillo\">Amarillo</option>
+              <option  value=\"rojo\">Rojo</option>
+              <option  value=\"calvo\">Calvo</option>
+            </select>
+        </label>
+      </div>
+    
+    <div class=\"field\">
+        <label for=\"fecha_turno\"> fecha:
+            <input type=\"date\" name=\"fecha_turno\" required >
+        </label>
+    </div>
+    <div class=\"field\">
+        <label for=\"hora_turno\">   hora:
+            <input type=\"time\" name=\"hora_turno\" >
+        </label>
+    </div> 
+    </div>
+    <input type=\"submit\" name=\"Enviar\">
+</form>
+
+
 ";
     }
 
     public function getTemplateName()
     {
-        return "turnos.delete.html";
+        return "turnos.modificar.html";
     }
 
     public function isTraitable()
@@ -168,7 +227,7 @@ class __TwigTemplate_731ee2aaf806b1fa1ef0e0d0e5cb00df84b2378c226b55db5d5e5a8ab7f
 
     public function getDebugInfo()
     {
-        return array (  155 => 57,  148 => 55,  140 => 52,  136 => 51,  132 => 50,  128 => 49,  124 => 48,  120 => 47,  116 => 46,  112 => 45,  108 => 44,  104 => 43,  100 => 42,  97 => 41,  92 => 40,  65 => 15,  62 => 14,  54 => 10,  51 => 9,  44 => 6,  41 => 5,  35 => 3,  15 => 1,);
+        return array (  145 => 47,  138 => 45,  130 => 42,  126 => 41,  122 => 40,  118 => 39,  114 => 38,  110 => 37,  106 => 36,  102 => 35,  98 => 34,  94 => 33,  90 => 32,  87 => 31,  82 => 30,  65 => 15,  62 => 14,  54 => 10,  51 => 9,  44 => 6,  41 => 5,  35 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -187,17 +246,7 @@ class __TwigTemplate_731ee2aaf806b1fa1ef0e0d0e5cb00df84b2378c226b55db5d5e5a8ab7f
 {% endblock %}
 
 {% block main %}
-<h2>Turnos eliminar</h2>
-
-<form action=\"/turnos/borrar\" method=\"POST\">
-   <div class=\"field\">
-        <label for=\"id\"> ID a eliminar:
-            <input type=\"number\" name=\"id\" required >
-        </label>
-    </div>
-    <input type=\"submit\" name=\"Enviar\">
-</form>
-
+<h2>Turnos modificar</h2>
 <table>
 <tr>
     <td> id </td>
@@ -230,7 +279,76 @@ class __TwigTemplate_731ee2aaf806b1fa1ef0e0d0e5cb00df84b2378c226b55db5d5e5a8ab7f
 <span>No hay turnos registrados</span>
 {% endfor %}
 </table>
+
+<form action=\"/turnos/validateCambio\" method=\"POST\">
+   <div class=\"field\">
+        <label for=\"id\"> ID de turno a modificar:
+            <input type=\"number\" name=\"id\" required >
+        </label>
+    <div class=\"field\">
+        <label for=\"paciente\"> Nombre paciente:
+            <input type=\"text\" name=\"paciente\" required >
+        </label>
+    </div>
+    <div class=\"field\">
+        <label for=\"email\">   email:
+            <input type=\"email\" name=\"email\" required >
+        </label>
+    </div>
+    <div class=\"field\">
+        <label for=\"telefono\">   telefono:
+            <input type=\"text\" name=\"telefono\" required >
+        </label>
+    </div>
+    
+      <div class=\"field\">
+        <label for=\"edad\" >Edad: 
+            <input name=\"edad\" type=\"number\" min=0 max=130>
+        </label>
+      </div>
+      <div class=\"field\">
+        <label for=\"talla_calzado\" >Talla de calzado: 
+                <input name=\"talla_calzado\" type=\"number\" min=20 max=50>
+        </label>
+      </div>
+      <div class=\"field\">
+        <label for=\"altura\" >Altura: 
+            <input name=\"altura\" type=\"number\">
+        </label>
+      </div>
+      <div class=\"field\">
+        <label for=\"fecha_nacimiento\">fecha de nacimiento: 
+            <input name=\"fecha_nacimiento\" type=\"date\" required=\"required\">
+        </label>
+      </div>
+      <div class=\"field\">
+        <label for=\"color_pelo\" >Color de pelo: 
+            <select name=\"color_pelo\">
+              <option  value=\"marron\">Marrón</option>
+              <option  value=\"negro\">Negro</option>
+              <option  value=\"amarillo\">Amarillo</option>
+              <option  value=\"rojo\">Rojo</option>
+              <option  value=\"calvo\">Calvo</option>
+            </select>
+        </label>
+      </div>
+    
+    <div class=\"field\">
+        <label for=\"fecha_turno\"> fecha:
+            <input type=\"date\" name=\"fecha_turno\" required >
+        </label>
+    </div>
+    <div class=\"field\">
+        <label for=\"hora_turno\">   hora:
+            <input type=\"time\" name=\"hora_turno\" >
+        </label>
+    </div> 
+    </div>
+    <input type=\"submit\" name=\"Enviar\">
+</form>
+
+
 {% endblock %}
-", "turnos.delete.html", "C:\\Users\\Maxi\\Downloads\\paw-tp4-master\\3\\app\\views\\turnos.delete.html");
+", "turnos.modificar.html", "C:\\Users\\Maxi\\Downloads\\paw-tp4-master\\3\\app\\views\\turnos.modificar.html");
     }
 }
