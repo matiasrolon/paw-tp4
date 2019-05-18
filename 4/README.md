@@ -1,10 +1,10 @@
-# Consideraciones
+﻿# Consideraciones
 
 ## Instalación
 
  - Clonar el repositorio
  - Crear un schema de base de datos con algun cliente MySQL
- - Ejecutar script de la carpeta `sql/` para crear la bd y las tablas
+ - Ejecutar los scripts de la carpeta `sql/` en orden para crear la bd y las tablas
  - Editar archivo `config.php` con la configuracion apropiada de su equipo.  
  - Ejecutar `composer install`
 

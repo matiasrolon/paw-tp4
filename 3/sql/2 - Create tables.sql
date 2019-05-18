@@ -1,6 +1,3 @@
-CREATE SCHEMA turnos_medicos;
-
-
 
 
 CREATE TABLE turnos_medicos.turnos
@@ -26,9 +23,6 @@ CREATE TABLE turnos_medicos.turnos
       
 	fecha_turno date NOT NULL,
       
-	hora_turno time,
-      
-	diagnostico mediumblob
-   
+	hora_turno time
 ) 
 AUTO_INCREMENT = 0; 
