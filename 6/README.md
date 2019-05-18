@@ -1,8 +1,5 @@
-# Proyecto MVC
-
-Un proyecto derivado del tutorial introductorio de Laracast y con algunos
-agregados para ser utilizado como material de PAW - UNLu.
-
+<p><b>6)Implemente Modificación y Baja de los registros del sistema de turnos.  Dichas acciones deben 
+ser visualmente integradas en la tabla de turnos pedidos realizada en el TP 2.</p></b><br><br>
 ## Instalación
 
  - Clonar el repositorio
@@ -11,33 +8,11 @@ agregados para ser utilizado como material de PAW - UNLu.
  - Crear un archivo `config.php` 
  - Ejecutar `composer install`
 
-### Aclaración
 
-Por cada objeto creado por usted mismo (Model o Controller), debera indicar a
-composer que regenere el autoload:
+### Ejecución
 
-```
-composer dumpautoload
-```
+Ejecutar el comando php -S localhost:puerto ubicado en la carpeta que aloja el archivo index.php
 
-Si lo que se desea es agregar una nueva libreria de 3ero
 
-```
-composer requiere name/lib:version
-```
-
-## Deploy / ejecución
-
-### Local
-
-Ejecutar:
-
-```
-git clone https://github.com/tomasdelvechio/The-PHP-Practitioner-Full-Source-Code.git paw-mvc/
-cd paw-mvc/
-# Aca irian los pasos de instalación
-php -S localhost:8888
-```
-
-Luego ingresar a http://localhost:8888
+Luego ingresar a http://localhost:puerto
 
