@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Lista de Tareas{% endblock %}
+{% block title %}Lista de Turnos{% endblock %}
 
 {% block header %}
     {{ include('partials/nav.html') }}
@@ -9,7 +9,7 @@
 {% block head %}
     {{ parent() }}
     <meta name="keywords" content="PAW,2018,Templates,PHP">
-            <link rel="stylesheet" href="public/style.css">
+     <link href="public/style.css" type="text/css" rel="stylesheet" />
 {% endblock %}
 
 {% block main %}
@@ -18,10 +18,11 @@
      <img src="data:image/png;base64,{{diag.diagnostico}}">
 {% endfor %}
 
-<h2>Turnos:</h2>
+<div class="verTurnos">
+<h2>Turnos</h2>
 <table>
 {% if turnos %}
-   <tr>
+   <tr class="campos">
         <td> id </td>
         <td> paciente </td>
         <td> email </td>
@@ -56,4 +57,5 @@
 <span>No hay turnos registrados</span>
 {% endfor %}
 </table>
+</div>
 {% endblock %}

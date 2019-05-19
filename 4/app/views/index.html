@@ -2,16 +2,19 @@
 
 {% block title %}Home{% endblock %}
 
-{% block header %}
-    {{ include('partials/nav.html') }}
-{% endblock %}
-
 {% block head %}
     {{ parent() }}
     <meta name="keywords" content="PAW,2018,Templates,PHP">
 {% endblock %}
 
+{% block header %}
+    {{ include('partials/nav.html') }}
+{% endblock %}
+
 {% block main %}
-<h1>Punto 3 de TP4 - PAW 2018  ( UNLu )</h1>
+<div class="home">
+    <h1 class="presentacion"> Punto 4 de TP4</h1>
+    <h2 class="presentacion"> PAW 2018  ( UNLu )</h2>
+</div>
 {% endblock %}
 

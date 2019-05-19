@@ -9,14 +9,13 @@
 {% block head %}
     {{ parent() }}
     <meta name="keywords" content="PAW,2018,Templates,PHP">
-        <link rel="stylesheet" href="public/style.css">
+         <link href="public/style.css" type="text/css" rel="stylesheet" />
 {% endblock %}
 
 {% block main %}
-<h2>Informacion del turno: </h2>
-
- <div class="turno">
-  <section class="persona">
+      <h2>Informacion del turno </h2>
+<div class="turno">
+  <section class="fieldsPaciente">
        <div class="field">
             <label> 
                <b>Paciente:</b>
@@ -33,6 +32,7 @@
             {{turnoX.email}}
             </label>
         </div>
+        <br>
         <div class="field">
             <label>  <b> edad: </b>
                 {{turnoX.edad}}
@@ -43,6 +43,7 @@
             {{turnoX.talla_calzado}}
             </label>
         </div>
+
         <div class="field">
             <label>  <b> altura: </b>
             {{turnoX.altura}}
@@ -59,7 +60,8 @@
             </label>
         </div>
      </section>
-    <section class="turno">       
+     
+    <section class="fieldsTurno">       
         <div class="field">
             <label> <b> fecha del turno: </b>
                         {{turnoX.fecha_turno}}
@@ -70,11 +72,11 @@
                     {{turnoX.hora_turno}}
             </label>
         </div>
-        <div class="field">
-            <label>  <b> diagnostico: </b>
+        <br>
+        <div class="field imagen">
+            <label>  <b> diagnostico: </b> </label>
             <div> <img src="data:image/png;base64,{{diag}}"></div>
-            </label>
         </div>
-    </section>    
+    </section>      
 </div>    
 {% endblock %}

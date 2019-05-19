@@ -8,16 +8,6 @@ main{
 
 .menu{
     list-style: none;
-    text-align: center;
-}
-
-.item_menu{
-    display: inline;
-    margin: 15px;
-}
-
-.submenu{
-    list-style: none;
 }
 
 /* ------------- HOME ------------------*/

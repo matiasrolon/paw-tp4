@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Crear Tarea Nueva{% endblock %}
+{% block title %}Crear Nuevo Turno{% endblock %}
 
 {% block header %}
     {{ include('partials/nav.html') }}
@@ -15,7 +15,8 @@
 {% block main %}
 <h2>Reservar Turno</h2>
 <form action="/turnos/validate" method="POST" enctype="multipart/form-data">
-   <div class="field">
+   <section class="fieldsPaciente">
+    <div class="field">
         <label for="paciente"> Nombre paciente:
             <input type="text" name="paciente" required >
         </label>
@@ -42,7 +43,7 @@
         </label>
       </div>
       <div class="field">
-        <label for="altura" >Altura: 
+        <label for="altura" >Altura (cm): 
             <input name="altura" type="number">
         </label>
       </div>
@@ -62,14 +63,16 @@
             </select>
         </label>
       </div>
+    </section>
     
+    <section class="fieldsTurno">
     <div class="field">
-        <label for="fecha_turno"> fecha:
+        <label for="fecha_turno"> fecha turno:
             <input type="date" name="fecha_turno" required >
         </label>
     </div>
     <div class="field">
-        <label for="hora_turno">   hora:
+        <label for="hora_turno">   hora turno:
             <input type="time" name="hora_turno" >
         </label>
     </div>
@@ -79,8 +82,11 @@
             <input name="diagnostico" type="file" >
         </label>
     </div>  
-       
-    <input type="submit" name="Enviar">
-    <input  class="controls" type="reset" value="Resetear">
+    </section>
+    
+    <section class="botonesForm">    
+        <input type="submit" name="Enviar">
+        <input  class="controls" type="reset" value="Resetear">
+    </section>
 </form>
 {% endblock %}
