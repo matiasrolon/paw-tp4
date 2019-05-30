@@ -3,7 +3,7 @@ permitir vía constructor la provisión de los datos de acceso. Los datos de acc
 un  archivo  de  configuración  específico  y  fuera  del  control  de  versiones.  Documentar  este 
 mecanismo de forma adecuada.</b><br><br>
  
-Se creo el objeto Conexion que se encargara de gestionar la conexión a la base de datos. Este objeto recibira los parametros que se encuentran en config.php para poder costruir la conexión con la base de datos. La ejecución de la misma se realiza utilizando la extensión MySQLi y se realiza dentro de index.php.
+Se creo el objeto Conexion que se encargara de gestionar la conexión a la base de datos. Este objeto recibira los parametros que se encuentran en config.php para poder costruir la conexión con la base de datos. La ejecución de la misma se realiza utilizando PDO y se realiza dentro de index.php.
 <br><br></p>
 
 
