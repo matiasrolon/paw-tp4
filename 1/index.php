@@ -9,22 +9,23 @@
     
     <?php
     
+     
     $baseDeDatos = "pawtp4";
     $password = "";
     $usuario = "root";
-    $direccion = "localhost";
-    $conexion = mysqli_connect($direccion,$usuario,$password,$baseDeDatos);
+    $direccion = "mysql:host=localhost";
+    $conexion = new PDO($direccion.';dbname='.$baseDeDatos, $usuario, $password);
     
     if(!$conexion){
         echo "Error de conexión" ;
         
     }
     else{
-    echo "la conexión a la base de datos se genero correctamente " . mysqli_get_host_info($conexion) . PHP_EOL;
+    echo "la conexión a la base de datos se genero correctamente ";
     }
     
-    phpinfo(8);
-    mysqli_close($conexion);
+    phpinfo();
+   
     
     ?>
     

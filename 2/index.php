@@ -15,7 +15,9 @@
     $conf = $configuracion -> getConf();
     $conexion = new Conexion($conf);
     
-    phpinfo();
+    if ($conexion){
+        echo 'Se realizo la conexión correctamente'
+    }
     ?>
     
 </body>
