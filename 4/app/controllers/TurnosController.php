@@ -20,7 +20,7 @@ class TurnosController extends Controller
         $turnos = $this->model->get();
         return view('turnos', ['turnos'=>$turnos]);
     }
-    
+
     public function showTurno(){
         $turno = $this->model->getTurno($_GET["id"]);
         //print_r($turno[0]);
@@ -30,26 +30,57 @@ class TurnosController extends Controller
 
     public function create()
     {
-        return view('turnos.create');
+      return view('turnos.create',
+                                  [ 'errores' => $CampoError,
+                                    'paciente' => $_POST['paciente'],
+                                    'email' => $_POST['email'],
+                                    'telefono' => $_POST['telefono'],
+                                    'edad' => $_POST['edad'],
+                                    'talla_calzado' => $_POST['talla_calzado'],
+                                    'altura' => $_POST['altura'],
+                                    'fecha_nacimiento' => $_POST['fecha_nacimiento'],
+                                    'color_pelo' => $_POST['color_pelo'],
+                                    'fecha_turno' => $_POST['fecha_turno'],
+                                    'hora_turno' => $_POST['hora_turno'],
+                                    'diagnostico' => $_FILES["diagnostico"]["tmp_name"]
+                                  ]
+                 );
     }
 
     public function validate()
-    {        
-        $CampoError = "";
-        
+    {
+        $CampoError =  array();
+
         require 'app/controllers/validateForm.php';
         require 'app/controllers/validateImage.php';
-        
-        if ($CampoError == "") {
+
+        if (empty($CampoError)) {
             $result = $this->save();
-            $diag = base64_encode($result['diagnostico']);
+          //  $diag = [];
+          //  if (isset($_POST['diagnostico'])){
+              $diag = base64_encode($result['diagnostico']);
+            //}
             return view('turnoReservado', ['turnoX' => $result, 'diag'=>$diag]);
         } else {
-             return view('camposErroneos', ['errores' => $CampoError]);        
+             return view('turnos.create',
+                                         [ 'errores' => $CampoError,
+                                           'paciente' => $_POST['paciente'],
+                                           'email' => $_POST['email'],
+                                           'telefono' => $_POST['telefono'],
+                                           'edad' => $_POST['edad'],
+                                           'talla_calzado' => $_POST['talla_calzado'],
+                                           'altura' => $_POST['altura'],
+                                           'fecha_nacimiento' => $_POST['fecha_nacimiento'],
+                                           'color_pelo' => $_POST['color_pelo'],
+                                           'fecha_turno' => $_POST['fecha_turno'],
+                                           'hora_turno' => $_POST['hora_turno'],
+                                           'diagnostico' => $_FILES["diagnostico"]["tmp_name"]
+                                         ]
+                        );
         }
     }
 
-    
+
     public function save()
     {
         $turno = [
@@ -68,6 +99,6 @@ class TurnosController extends Controller
         $this->model->insert($turno);
         return $turno;
     }
-    
-    
+
+
 }
