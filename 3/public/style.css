@@ -8,6 +8,16 @@ main{
 
 .menu{
     list-style: none;
+    text-align: center;
+}
+
+.item_menu{
+    display: inline;
+    margin: 15px;
+}
+
+.submenu{
+    list-style: none;
 }
 
 /* ------------- HOME ------------------*/
@@ -53,7 +63,7 @@ h1{
 
 /* ------------- VER TURNOS ------------------*/
 .verTurnos{
-    text-align: center;    
+    text-align: center;
     align-items: center;
 }
 
@@ -72,6 +82,12 @@ td{
     padding: 10px;
 }
 
+.IrAlCielo{
+  display: inline;
+  border: solid 3px black;
+  padding: 5px;
+}
+
 /*------------- VER TURNOS ------------------ */
 
 /* ------------- TURNOS/CREATE ------------------*/
@@ -82,9 +98,9 @@ input{
 }
 
 .field{
-    text-align:left;    
+    text-align:left;
     align-items: center;
-    display: inline-block;    
+    display: inline-block;
     margin:10px;
 }
 
@@ -113,12 +129,25 @@ input{
     margin: 5px;
 }
 
+.camposErroneos{
+  background-color: #FF8275;
+  border: solid 3px red;
+  font-size: 120%;
+  text-align: left;
+  margin-left : 4%;
+  margin-right : 4%;
+}
+.camposErroneos div{
+  margin: 10px;
+}
+.tituloCamposErroneos{
+  font-size: 140%;
+  margin: 5px;
+}
+
 
 /*------------- TURNOS/CREATE ------------------ */
-/* ------- TURNOS/VALIDATE - RESERVADO ----------*/
 
-
-/*------- TURNOS/VALIDATE - RESERVADO ---------- */
 
 /* ------------ INFORMACION FICHA ---------------*/
 

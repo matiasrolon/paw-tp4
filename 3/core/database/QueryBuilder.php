@@ -37,6 +37,20 @@ class QueryBuilder
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
+    public function selectAtributeByID($id,$atribute,$table)
+    {
+        $statement = $this->pdo->prepare("select {$atribute} from {$table} where id={$id}");
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
+    
+    
+    public function selectByID($id,$table)
+    {
+        $statement = $this->pdo->prepare("select * from {$table} where id={$id}");
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
     /**
      * Insert a record into a table.
      *

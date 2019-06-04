@@ -9,64 +9,70 @@
 {% block head %}
     {{ parent() }}
     <meta name="keywords" content="PAW,2018,Templates,PHP">
+         <link href="public/style.css" type="text/css" rel="stylesheet" />
 {% endblock %}
 
 {% block main %}
-<h2>Turno reservado: </h2>
-
- <div class="turno">
-   <div class="field">
-        <label> 
-           <b>Paciente:</b>
-            {{turnoX.paciente}}
-        </label>
-    </div>
-    <div class="field">
-        <label>  <b> tel: </b>
-            {{turnoX.telefono}}
-        </label>
-    </div>
-    <div class="field">
-        <label>  <b> email: </b>
-        {{turnoX.email}}
-        </label>
-    </div>
-    <div class="field">
-        <label>  <b> edad: </b>
-            {{turnoX.edad}}
-        </label>
-    </div>
-    <div class="field">
-        <label>  <b> talla de calzado: </b>
-        {{turnoX.talla_calzado}}
-        </label>
-    </div>
-    <div class="field">
-        <label>  <b> altura: </b>
-        {{turnoX.altura}}
-        </label>
-    </div>
-    <div class="field">
-        <label>  <b> Fecha de Nacimiento: </b>
-        {{turnoX.fecha_nacimiento}}
-        </label>
-    </div>
-    <div class="field">
-        <label>  <b> Color de pelo: </b>
-        {{turnoX.color_pelo}}
-        </label>
-    </div>
-    <div class="field">
-        <label> <b> fecha del turno: </b>
-                    {{turnoX.fecha_turno}}
-        </label>
-    </div>
-    <div class="field">
-        <label>  <b> hora del turno: </b>
-                {{turnoX.hora_turno}}
-        </label>
-    </div>
-</div>    
+<h2>Turno reservado </h2>
 <h3>Gracias por atenderse con nosotros. </h3>
+ <div class="turno">
+  <section class="fieldsPaciente">
+       <div class="field">
+            <label>
+               <b>Paciente:</b>
+                {{turnoX.paciente}}
+            </label>
+        </div>
+        <div class="field">
+            <label>  <b> tel: </b>
+                {{turnoX.telefono}}
+            </label>
+        </div>
+        <div class="field">
+            <label>  <b> email: </b>
+            {{turnoX.email}}
+            </label>
+        </div>
+        <br>
+        <div class="field">
+            <label>  <b> edad: </b>
+                {{turnoX.edad}}
+            </label>
+        </div>
+        <div class="field">
+            <label>  <b> talla de calzado: </b>
+            {{turnoX.talla_calzado}}
+            </label>
+        </div>
+        <div class="field">
+            <label>  <b> altura: </b>
+            {{turnoX.altura}}
+            </label>
+        </div>
+        <div class="field">
+            <label>  <b> Fecha de Nacimiento: </b>
+            {{turnoX.fecha_nacimiento}}
+            </label>
+        </div>
+        <div class="field">
+            <label>  <b> Color de pelo: </b>
+            {{turnoX.color_pelo}}
+            </label>
+        </div>
+    </section>
+
+    <section class="fieldsTurno">
+        <div class="field">
+            <label> <b> fecha del turno: </b>
+                        {{turnoX.fecha_turno}}
+            </label>
+        </div>
+        <div class="field">
+            <label>  <b> hora del turno: </b>
+                    {{turnoX.hora_turno}}
+            </label>
+        </div>
+     </section>
+</div>
 
 {% endblock %}

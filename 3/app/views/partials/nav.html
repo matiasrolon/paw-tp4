@@ -1,12 +1,10 @@
+
 {% block nav %}
-    <ul class="menu">
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">Sobre la pagina</a></li>
-        <li>Admin Turnos
-           <ul>
-               <li><a href="/turnos">ver Turnos</a></li>
-                <li><a href="/turnos/create">Crear Turnos</a></li>
-           </ul>
-        </li>
+    <ul id='head' class="menu">
+        <li class="item_menu"><a href="/">Home</a></li>
+        <li class="item_menu"><a href="/turnos">Turnos</a></li>
+        <li class="item_menu"><a href="/turnos/create">Solicitar Turno</a></li>
+         <li class="item_menu"><a href="/about">Sobre la pagina</a></li>
+
     </ul>
 {% endblock %}

@@ -9,11 +9,11 @@
 {% block head %}
     {{ parent() }}
     <meta name="keywords" content="PAW,2018,Templates,PHP">
-    <link href="style.css" rel="stylesheet" type="text/css">
 {% endblock %}
 
 {% block main %}
-<h2>Turno NO reservado</h2>
-<h3>Los siguientes campos son erroneos: {{ errores }} </h3>
-
+<div class="presentacion errores">
+    <h1>Turno NO reservado</h1>
+    <h3>Los siguientes campos son erroneos: <br> {{ errores }} </h3>
+</div>
 {% endblock %}
