@@ -1,6 +1,6 @@
 <?php
 
-$name_pattern = "/^[a-zA-Z'-]+$/";
+$name_pattern = "/^[a-zA-Z'-' ']+$/";
 $tel_pattern = '/[0-9]{6,}/';
 $edad_pattern = '/[0-9]{0,}/';
 $talla_pattern = '/[0-9]{0,}/';
@@ -62,12 +62,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
       $CampoError['hora_turno'] = $ErrorHorarioTurno;}
 
 
-    $actual_name = pathinfo($_FILES["diagnostico"]["name"],PATHINFO_FILENAME);
-    $extension = pathinfo($_FILES["diagnostico"]["name"], PATHINFO_EXTENSION);
-    $errorImagen ='';
-    if($extension != "jpg" && $extension != "png" ) { $errorImagen= "Solo se permiten archivos con extensión JPG y PNG. "; }
-    if($_FILES["diagnostico"]["size"]>100000){ $errorImagen= "Solo se permiten imagenes de hasta 1MB/10. ";}
-    if ($errorImagen!=''){
-        $CampoError['diagnostico']=$errorImagen;
-      }
+  $actual_name = pathinfo($_FILES["diagnostico"]["name"],PATHINFO_FILENAME);
+  $extension = pathinfo($_FILES["diagnostico"]["name"], PATHINFO_EXTENSION);
+  $errorImagen ='';
+  if($_FILES["diagnostico"]["size"]>10000000){ $errorImagen= "Solo se permiten imagenes de hasta 10MB. ";}
+  if(($extension != "jpg") && ($extension != "png") ) { $errorImagen= "Solo se permiten archivos con extensión JPG y PNG. "; }
+  if ($errorImagen!=''){
+      $CampoError['diagnostico']=$errorImagen;
+    }
+
 }

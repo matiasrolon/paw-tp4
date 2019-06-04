@@ -51,11 +51,14 @@
     <td>{{ turno.fecha_turno }}</td>
     <td>{{ turno.hora_turno }}</td>
     <td><a href="/turnos/ficha?id={{turno.id}}">  link </a> </td>
-    
+
 </tr>
 {% else %}
 <span>No hay turnos registrados</span>
 {% endfor %}
 </table>
 </div>
+<br>
+<a class="IrAlCielo" href=#head>Ir al Cielo</a>
+
 {% endblock %}

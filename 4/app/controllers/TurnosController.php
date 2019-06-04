@@ -52,14 +52,10 @@ class TurnosController extends Controller
         $CampoError =  array();
 
         require 'app/controllers/validateForm.php';
-        require 'app/controllers/validateImage.php';
 
         if (empty($CampoError)) {
             $result = $this->save();
-          //  $diag = [];
-          //  if (isset($_POST['diagnostico'])){
-              $diag = base64_encode($result['diagnostico']);
-            //}
+            $diag = base64_encode($result['diagnostico']);
             return view('turnoReservado', ['turnoX' => $result, 'diag'=>$diag]);
         } else {
              return view('turnos.create',
