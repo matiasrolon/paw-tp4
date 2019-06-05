@@ -62,8 +62,11 @@ class __TwigTemplate_e1087d1a0146b267d3c688af5f91057582914bb5399b702f44979ba25bb
     public function block_main($context, array $blocks = array())
     {
         // line 15
-        echo "<h1>Sobre esta pagina</h1>
-<span> <b>Consigna:</b> Extienda el sistema de gestión de turnos médicos para que los datos sean persistidos sobre una base de datos. La generación del número de turno debe hacerse vía motor de base de datos. ¿Qué cambios hubo que realizar para la generación del id?</span>
+        echo "<div class=\"presentacion about\">
+<h1>Sobre esta pagina</h1>
+<p><b>Consigna:</b></p> 
+<span> Implemente Modificación y Baja de los registros del sistema de turnos. Dichas acciones deben ser visualmente integradas en la tabla de turnos pedidos realizada en el TP2</span>
+</div>
 ";
     }
 
@@ -98,9 +101,12 @@ class __TwigTemplate_e1087d1a0146b267d3c688af5f91057582914bb5399b702f44979ba25bb
 {% endblock %}
 
 {% block main %}
+<div class=\"presentacion about\">
 <h1>Sobre esta pagina</h1>
-<span> <b>Consigna:</b> Extienda el sistema de gestión de turnos médicos para que los datos sean persistidos sobre una base de datos. La generación del número de turno debe hacerse vía motor de base de datos. ¿Qué cambios hubo que realizar para la generación del id?</span>
+<p><b>Consigna:</b></p> 
+<span> Implemente Modificación y Baja de los registros del sistema de turnos. Dichas acciones deben ser visualmente integradas en la tabla de turnos pedidos realizada en el TP2</span>
+</div>
 {% endblock %}
-", "about.html", "C:\\Users\\Maxi\\Downloads\\paw-tp4-master\\3\\app\\views\\about.html");
+", "about.html", "C:\\Users\\Maxi\\Downloads\\PAWTP4(2)\\paw-tp4-master\\6\\app\\views\\about.html");
     }
 }

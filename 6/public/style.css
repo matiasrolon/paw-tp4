@@ -1,0 +1,195 @@
+body {
+    background-color: lightsteelblue;
+}
+
+main{
+    text-align: center;
+}
+
+.menu{
+    list-style: none;
+    text-align: center;
+}
+
+.item_menu{
+    display: inline;
+    margin: 15px;
+}
+
+.submenu{
+    list-style: none;
+}
+
+/* ------------- HOME ------------------*/
+
+.home{
+    display: inline-block;
+    border: solid 3px;
+    background-color: whitesmoke;
+    width: 70%;
+    height: 30%;
+}
+
+.presentacion{
+    vertical-align: middle;
+    text-align: center;
+}
+
+
+/*------------- HOME ------------------ */
+/* ------------- ABOUT ------------------*/
+
+h1{
+    margin: 0px;
+    padding: 2%;
+    border-bottom: solid 3px;
+    background-color: greenyellow;
+}
+
+.about{
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+    width: 70%;
+    height: 30%;
+    padding-bottom: 20px;
+    align-content: center;
+    border: solid 3px;
+    background-color: whitesmoke;
+}
+
+
+/*------------- ABOUT ------------------ */
+
+/* ------------- VER TURNOS ------------------*/
+.verTurnos{
+    text-align: center;
+    align-items: center;
+}
+
+.campos{
+    background-color: greenyellow;
+}
+
+table{
+    border: solid 3px;
+    border-collapse: collapse;
+    display: inline-block;
+    background-color: whitesmoke;
+}
+td{
+    border: black 3px solid;
+    padding: 10px;
+}
+
+/*------------- VER TURNOS ------------------ */
+
+/* ------------- TURNOS/CREATE ------------------*/
+
+
+input{
+
+}
+
+.field{
+    text-align:left;
+    align-items: center;
+    display: inline-block;
+    margin:10px;
+}
+
+.fieldsPaciente{
+    display: inline-block;
+    border: solid 5px;
+    width: 90%;
+    padding: 10px;
+    background-color: greenyellow;
+    margin-top: 10px;
+}
+
+
+.fieldsTurno{
+    display: inline-block;
+    border: solid 5px;
+    width: 90%;
+    margin: 10px;
+    padding: 10px;
+    background-color: greenyellow;
+}
+
+.botonesForm input{
+    width: 15%;
+    height: 30px;
+    margin: 5px;
+}
+
+.camposErroneos{
+  background-color: #FF8275;
+  border: solid 3px red;
+  font-size: 120%;
+  text-align: left;
+  margin-left : 4%;
+  margin-right : 4%;
+}
+.camposErroneos div{
+  margin: 10px;
+}
+.tituloCamposErroneos{
+  font-size: 140%;
+  margin: 5px;
+}
+
+
+/*------------- TURNOS/CREATE ------------------ */
+
+
+/* ------------ INFORMACION FICHA ---------------*/
+
+.ficha{
+        vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+    width: 90%;
+    padding-bottom: 20px;
+    align-content: center;
+    border: solid 3px;
+    background-color: whitesmoke;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+field imagen{
+    display: block;
+}
+
+/* ------------ INFORMACION FICHA ---------------*/
+/* ------------ MSOTRAR ERRORES ---------------*/
+.errores{
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+    width: 70%;
+    height: 30%;
+    padding-bottom: 20px;
+    align-content: center;
+    border: solid 3px;
+    background-color: whitesmoke;
+}
+/* ------------ MOSTRAR ERRORES --------------*/
+/* ------------ ELIMINAR ---------------*/
+.controls{    
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: buttontext;
+    background-color: buttonface;
+    box-sizing: border-box;
+    padding: 2px 6px 3px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonface;
+    border-image: initial;
+}

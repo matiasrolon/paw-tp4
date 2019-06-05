@@ -1,7 +1,7 @@
 <?php
 
-/* turnoReservado.html */
-class __TwigTemplate_92051c49a20e3c250b8ff8bf0d370d3f61e62539e56aab0b1cabf260d5b96807 extends Twig_Template
+/* ficha-turno.html */
+class __TwigTemplate_f06182f63f7ff05663f4ef3a7c718b11541f6ffaaeb37cf4e059a8e72dc89496 extends Twig_Template
 {
     private $source;
 
@@ -12,7 +12,7 @@ class __TwigTemplate_92051c49a20e3c250b8ff8bf0d370d3f61e62539e56aab0b1cabf260d5b
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html", "turnoReservado.html", 1);
+        $this->parent = $this->loadTemplate("base.html", "ficha-turno.html", 1);
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'header' => array($this, 'block_header'),
@@ -63,15 +63,14 @@ class __TwigTemplate_92051c49a20e3c250b8ff8bf0d370d3f61e62539e56aab0b1cabf260d5b
     public function block_main($context, array $blocks = array())
     {
         // line 16
-        echo "<h2>Turno reservado </h2>
-<h3>Gracias por atenderse con nosotros. </h3>
- <div class=\"turno\">
+        echo "      <h2>Informacion del turno </h2>
+<div class=\"turno\">
   <section class=\"fieldsPaciente\">
        <div class=\"field\">
-            <label>
+            <label> 
                <b>Paciente:</b>
                 ";
-        // line 23
+        // line 22
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["turnoX"] ?? null), "paciente", array()), "html", null, true);
         echo "
             </label>
@@ -79,7 +78,7 @@ class __TwigTemplate_92051c49a20e3c250b8ff8bf0d370d3f61e62539e56aab0b1cabf260d5b
         <div class=\"field\">
             <label>  <b> tel: </b>
                 ";
-        // line 28
+        // line 27
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["turnoX"] ?? null), "telefono", array()), "html", null, true);
         echo "
             </label>
@@ -87,7 +86,7 @@ class __TwigTemplate_92051c49a20e3c250b8ff8bf0d370d3f61e62539e56aab0b1cabf260d5b
         <div class=\"field\">
             <label>  <b> email: </b>
             ";
-        // line 33
+        // line 32
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["turnoX"] ?? null), "email", array()), "html", null, true);
         echo "
             </label>
@@ -96,7 +95,7 @@ class __TwigTemplate_92051c49a20e3c250b8ff8bf0d370d3f61e62539e56aab0b1cabf260d5b
         <div class=\"field\">
             <label>  <b> edad: </b>
                 ";
-        // line 39
+        // line 38
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["turnoX"] ?? null), "edad", array()), "html", null, true);
         echo "
             </label>
@@ -104,11 +103,12 @@ class __TwigTemplate_92051c49a20e3c250b8ff8bf0d370d3f61e62539e56aab0b1cabf260d5b
         <div class=\"field\">
             <label>  <b> talla de calzado: </b>
             ";
-        // line 44
+        // line 43
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["turnoX"] ?? null), "talla_calzado", array()), "html", null, true);
         echo "
             </label>
         </div>
+
         <div class=\"field\">
             <label>  <b> altura: </b>
             ";
@@ -133,9 +133,9 @@ class __TwigTemplate_92051c49a20e3c250b8ff8bf0d370d3f61e62539e56aab0b1cabf260d5b
         echo "
             </label>
         </div>
-    </section>
-
-    <section class=\"fieldsTurno\">
+     </section>
+     
+    <section class=\"fieldsTurno\">       
         <div class=\"field\">
             <label> <b> fecha del turno: </b>
                         ";
@@ -153,23 +153,22 @@ class __TwigTemplate_92051c49a20e3c250b8ff8bf0d370d3f61e62539e56aab0b1cabf260d5b
             </label>
         </div>
         <br>
-            <div class=\"field imagen\">
-              <label>  <b> diagnostico: </b>
-                <div> <img src=\"data:image/png;base64,";
+        <div class=\"field imagen\">
+            <label>  <b> diagnostico: </b> </label>
+            <div> <img src=\"data:image/png;base64,";
         // line 78
         echo twig_escape_filter($this->env, ($context["diag"] ?? null), "html", null, true);
         echo "\"></div>
-              </label>
-            </div>
-     </section>
-</div>
-
+        </div>
+    </section>      
+    
+</div>    
 ";
     }
 
     public function getTemplateName()
     {
-        return "turnoReservado.html";
+        return "ficha-turno.html";
     }
 
     public function isTraitable()
@@ -179,7 +178,7 @@ class __TwigTemplate_92051c49a20e3c250b8ff8bf0d370d3f61e62539e56aab0b1cabf260d5b
 
     public function getDebugInfo()
     {
-        return array (  160 => 78,  151 => 72,  143 => 67,  132 => 59,  124 => 54,  116 => 49,  108 => 44,  100 => 39,  91 => 33,  83 => 28,  75 => 23,  66 => 16,  63 => 15,  54 => 10,  51 => 9,  44 => 6,  41 => 5,  35 => 3,  15 => 1,);
+        return array (  160 => 78,  151 => 72,  143 => 67,  132 => 59,  124 => 54,  116 => 49,  107 => 43,  99 => 38,  90 => 32,  82 => 27,  74 => 22,  66 => 16,  63 => 15,  54 => 10,  51 => 9,  44 => 6,  41 => 5,  35 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -199,12 +198,11 @@ class __TwigTemplate_92051c49a20e3c250b8ff8bf0d370d3f61e62539e56aab0b1cabf260d5b
 {% endblock %}
 
 {% block main %}
-<h2>Turno reservado </h2>
-<h3>Gracias por atenderse con nosotros. </h3>
- <div class=\"turno\">
+      <h2>Informacion del turno </h2>
+<div class=\"turno\">
   <section class=\"fieldsPaciente\">
        <div class=\"field\">
-            <label>
+            <label> 
                <b>Paciente:</b>
                 {{turnoX.paciente}}
             </label>
@@ -230,6 +228,7 @@ class __TwigTemplate_92051c49a20e3c250b8ff8bf0d370d3f61e62539e56aab0b1cabf260d5b
             {{turnoX.talla_calzado}}
             </label>
         </div>
+
         <div class=\"field\">
             <label>  <b> altura: </b>
             {{turnoX.altura}}
@@ -245,9 +244,9 @@ class __TwigTemplate_92051c49a20e3c250b8ff8bf0d370d3f61e62539e56aab0b1cabf260d5b
             {{turnoX.color_pelo}}
             </label>
         </div>
-    </section>
-
-    <section class=\"fieldsTurno\">
+     </section>
+     
+    <section class=\"fieldsTurno\">       
         <div class=\"field\">
             <label> <b> fecha del turno: </b>
                         {{turnoX.fecha_turno}}
@@ -259,15 +258,13 @@ class __TwigTemplate_92051c49a20e3c250b8ff8bf0d370d3f61e62539e56aab0b1cabf260d5b
             </label>
         </div>
         <br>
-            <div class=\"field imagen\">
-              <label>  <b> diagnostico: </b>
-                <div> <img src=\"data:image/png;base64,{{diag}}\"></div>
-              </label>
-            </div>
-     </section>
-</div>
-
-{% endblock %}
-", "turnoReservado.html", "C:\\Users\\Maxi\\Downloads\\PAWTP4(2)\\paw-tp4-master\\4\\app\\views\\turnoReservado.html");
+        <div class=\"field imagen\">
+            <label>  <b> diagnostico: </b> </label>
+            <div> <img src=\"data:image/png;base64,{{diag}}\"></div>
+        </div>
+    </section>      
+    
+</div>    
+{% endblock %}", "ficha-turno.html", "C:\\Users\\Maxi\\Downloads\\PAWTP4(2)\\paw-tp4-master\\4 - copia\\app\\views\\ficha-turno.html");
     }
 }

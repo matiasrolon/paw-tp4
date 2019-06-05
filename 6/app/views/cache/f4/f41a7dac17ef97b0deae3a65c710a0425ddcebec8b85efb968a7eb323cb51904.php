@@ -1,7 +1,7 @@
 <?php
 
-/* turnos.create.html */
-class __TwigTemplate_7b3e0caffec5a531b0fc795c9a578ca417ada05f66460f68a6f53387a5a2961b extends Twig_Template
+/* turnoModificar.html */
+class __TwigTemplate_567dce8240a44dab44300f40d6f44213413ac6afd692da2a3c0680790592faa3 extends Twig_Template
 {
     private $source;
 
@@ -12,7 +12,7 @@ class __TwigTemplate_7b3e0caffec5a531b0fc795c9a578ca417ada05f66460f68a6f53387a5a
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html", "turnos.create.html", 1);
+        $this->parent = $this->loadTemplate("base.html", "turnoModificar.html", 1);
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'header' => array($this, 'block_header'),
@@ -163,30 +163,40 @@ class __TwigTemplate_7b3e0caffec5a531b0fc795c9a578ca417ada05f66460f68a6f53387a5a
         }
         // line 51
         echo "
-<h2>Reservar Turno</h2>
-<form action=\"/turnos/validate\" method=\"POST\" enctype=\"multipart/form-data\">
-   <section class=\"fieldsPaciente\">
-    <div class=\"field\">
+<h2>Modificar Turno</h2>
+<form action=\"/turnos/validateM\" method=\"POST\" enctype=\"multipart/form-data\">
+   
+    <section class=\"fieldsPaciente\">
+        <div class=\"field\">
+        <label for=\"id\"> ID:
+            <input type=\"text\" name=\"id\" readonly= \"readonly\" required value=\"";
+        // line 58
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["turnoX"] ?? null), "id", array()), "html", null, true);
+        echo "\">
+        </label>
+    </div>
+       
+       <div class=\"field\">
         <label for=\"paciente\"> Nombre paciente:
             <input type=\"text\" name=\"paciente\" required value=\"";
-        // line 57
-        echo twig_escape_filter($this->env, ($context["paciente"] ?? null), "html", null, true);
+        // line 64
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["turnoX"] ?? null), "paciente", array()), "html", null, true);
         echo "\">
         </label>
     </div>
     <div class=\"field\">
         <label for=\"email\">   email:
             <input type=\"email\" name=\"email\" required value=\"";
-        // line 62
-        echo twig_escape_filter($this->env, ($context["email"] ?? null), "html", null, true);
+        // line 69
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["turnoX"] ?? null), "email", array()), "html", null, true);
         echo "\">
         </label>
     </div>
     <div class=\"field\">
         <label for=\"telefono\">   telefono:
             <input type=\"text\" name=\"telefono\" required value=\"";
-        // line 67
-        echo twig_escape_filter($this->env, ($context["telefono"] ?? null), "html", null, true);
+        // line 74
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["turnoX"] ?? null), "telefono", array()), "html", null, true);
         echo "\">
         </label>
     </div>
@@ -194,43 +204,49 @@ class __TwigTemplate_7b3e0caffec5a531b0fc795c9a578ca417ada05f66460f68a6f53387a5a
       <div class=\"field\">
         <label for=\"edad\" >Edad:
             <input name=\"edad\" type=\"number\" min=0 max=130 value=\"";
-        // line 73
-        echo twig_escape_filter($this->env, ($context["edad"] ?? null), "html", null, true);
+        // line 80
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["turnoX"] ?? null), "edad", array()), "html", null, true);
         echo "\">
         </label>
       </div>
       <div class=\"field\">
         <label for=\"talla_calzado\" >Talla de calzado:
                 <input name=\"talla_calzado\" type=\"number\" min=20 max=50 value=\"";
-        // line 78
-        echo twig_escape_filter($this->env, ($context["talla_calzado"] ?? null), "html", null, true);
+        // line 85
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["turnoX"] ?? null), "talla_calzado", array()), "html", null, true);
         echo "\">
         </label>
       </div>
       <div class=\"field\">
         <label for=\"altura\" >Altura (cm):
             <input name=\"altura\" type=\"number\" value=\"";
-        // line 83
-        echo twig_escape_filter($this->env, ($context["altura"] ?? null), "html", null, true);
+        // line 90
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["turnoX"] ?? null), "altura", array()), "html", null, true);
         echo "\">
         </label>
       </div>
       <div class=\"field\">
         <label for=\"fecha_nacimiento\">fecha de nacimiento:
             <input name=\"fecha_nacimiento\" type=\"date\" required=\"required\" value=\"";
-        // line 88
-        echo twig_escape_filter($this->env, ($context["fecha_nacimiento"] ?? null), "html", null, true);
+        // line 95
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["turnoX"] ?? null), "fecha_nacimiento", array()), "html", null, true);
         echo "\">
         </label>
       </div>
       <div class=\"field\">
         <label for=\"color_pelo\" >Color de pelo:
             <select name=\"color_pelo\"\">
-              <option  value=\"marron\">Marrón</option>
-              <option  value=\"negro\">Negro</option>
-              <option  value=\"amarillo\">Amarillo</option>
-              <option  value=\"rojo\" >Rojo</option>
-              <option  value=\"calvo\">Calvo</option>
+             <option value=\"";
+        // line 101
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["turnoX"] ?? null), "color_pelo", array()), "html", null, true);
+        echo "\">";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["turnoX"] ?? null), "color_pelo", array()), "html", null, true);
+        echo "</option>\"
+              <option  value=\"marron\">marrón</option>
+              <option  value=\"negro\">negro</option>
+              <option  value=\"amarillo\">amarillo</option>
+              <option  value=\"rojo\" >rojo</option>
+              <option  value=\"calvo\">calvo</option>
             </select>
         </label>
       </div>
@@ -240,25 +256,20 @@ class __TwigTemplate_7b3e0caffec5a531b0fc795c9a578ca417ada05f66460f68a6f53387a5a
     <div class=\"field\">
         <label for=\"fecha_turno\"> fecha turno:
             <input type=\"date\" name=\"fecha_turno\" required value=\"";
-        // line 107
-        echo twig_escape_filter($this->env, ($context["fecha_turno"] ?? null), "html", null, true);
+        // line 115
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["turnoX"] ?? null), "fecha_turno", array()), "html", null, true);
         echo "\">
         </label>
     </div>
     <div class=\"field\">
         <label for=\"hora_turno\">   hora turno:
             <input type=\"time\" name=\"hora_turno\" value=\"";
-        // line 112
-        echo twig_escape_filter($this->env, ($context["hora_turno"] ?? null), "html", null, true);
+        // line 120
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["turnoX"] ?? null), "hora_turno", array()), "html", null, true);
         echo "\" >
         </label>
     </div>
 
-    <div class=\"field\">
-        <label for=\"diagnostico\">Adjuntar diagnostico:
-            <input name=\"diagnostico\" type=\"file\" >
-        </label>
-    </div>
     </section>
 
     <section class=\"botonesForm\">
@@ -271,7 +282,7 @@ class __TwigTemplate_7b3e0caffec5a531b0fc795c9a578ca417ada05f66460f68a6f53387a5a
 
     public function getTemplateName()
     {
-        return "turnos.create.html";
+        return "turnoModificar.html";
     }
 
     public function isTraitable()
@@ -281,7 +292,7 @@ class __TwigTemplate_7b3e0caffec5a531b0fc795c9a578ca417ada05f66460f68a6f53387a5a
 
     public function getDebugInfo()
     {
-        return array (  252 => 112,  244 => 107,  222 => 88,  214 => 83,  206 => 78,  198 => 73,  189 => 67,  181 => 62,  173 => 57,  165 => 51,  161 => 49,  155 => 47,  152 => 46,  146 => 44,  143 => 43,  137 => 41,  134 => 40,  128 => 38,  125 => 37,  119 => 35,  116 => 34,  110 => 32,  107 => 31,  101 => 29,  98 => 28,  92 => 26,  89 => 25,  83 => 23,  80 => 22,  74 => 20,  72 => 19,  68 => 17,  66 => 16,  63 => 15,  54 => 10,  51 => 9,  44 => 6,  41 => 5,  35 => 3,  15 => 1,);
+        return array (  268 => 120,  260 => 115,  241 => 101,  232 => 95,  224 => 90,  216 => 85,  208 => 80,  199 => 74,  191 => 69,  183 => 64,  174 => 58,  165 => 51,  161 => 49,  155 => 47,  152 => 46,  146 => 44,  143 => 43,  137 => 41,  134 => 40,  128 => 38,  125 => 37,  119 => 35,  116 => 34,  110 => 32,  107 => 31,  101 => 29,  98 => 28,  92 => 26,  89 => 25,  83 => 23,  80 => 22,  74 => 20,  72 => 19,  68 => 17,  66 => 16,  63 => 15,  54 => 10,  51 => 9,  44 => 6,  41 => 5,  35 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -337,53 +348,61 @@ class __TwigTemplate_7b3e0caffec5a531b0fc795c9a578ca417ada05f66460f68a6f53387a5a
   </section>
 {% endif %}
 
-<h2>Reservar Turno</h2>
-<form action=\"/turnos/validate\" method=\"POST\" enctype=\"multipart/form-data\">
-   <section class=\"fieldsPaciente\">
-    <div class=\"field\">
+<h2>Modificar Turno</h2>
+<form action=\"/turnos/validateM\" method=\"POST\" enctype=\"multipart/form-data\">
+   
+    <section class=\"fieldsPaciente\">
+        <div class=\"field\">
+        <label for=\"id\"> ID:
+            <input type=\"text\" name=\"id\" readonly= \"readonly\" required value=\"{{ turnoX.id }}\">
+        </label>
+    </div>
+       
+       <div class=\"field\">
         <label for=\"paciente\"> Nombre paciente:
-            <input type=\"text\" name=\"paciente\" required value=\"{{ paciente }}\">
+            <input type=\"text\" name=\"paciente\" required value=\"{{ turnoX.paciente }}\">
         </label>
     </div>
     <div class=\"field\">
         <label for=\"email\">   email:
-            <input type=\"email\" name=\"email\" required value=\"{{ email }}\">
+            <input type=\"email\" name=\"email\" required value=\"{{ turnoX.email }}\">
         </label>
     </div>
     <div class=\"field\">
         <label for=\"telefono\">   telefono:
-            <input type=\"text\" name=\"telefono\" required value=\"{{ telefono }}\">
+            <input type=\"text\" name=\"telefono\" required value=\"{{ turnoX.telefono }}\">
         </label>
     </div>
 
       <div class=\"field\">
         <label for=\"edad\" >Edad:
-            <input name=\"edad\" type=\"number\" min=0 max=130 value=\"{{ edad }}\">
+            <input name=\"edad\" type=\"number\" min=0 max=130 value=\"{{ turnoX.edad }}\">
         </label>
       </div>
       <div class=\"field\">
         <label for=\"talla_calzado\" >Talla de calzado:
-                <input name=\"talla_calzado\" type=\"number\" min=20 max=50 value=\"{{ talla_calzado }}\">
+                <input name=\"talla_calzado\" type=\"number\" min=20 max=50 value=\"{{ turnoX.talla_calzado }}\">
         </label>
       </div>
       <div class=\"field\">
         <label for=\"altura\" >Altura (cm):
-            <input name=\"altura\" type=\"number\" value=\"{{ altura }}\">
+            <input name=\"altura\" type=\"number\" value=\"{{ turnoX.altura }}\">
         </label>
       </div>
       <div class=\"field\">
         <label for=\"fecha_nacimiento\">fecha de nacimiento:
-            <input name=\"fecha_nacimiento\" type=\"date\" required=\"required\" value=\"{{ fecha_nacimiento }}\">
+            <input name=\"fecha_nacimiento\" type=\"date\" required=\"required\" value=\"{{ turnoX.fecha_nacimiento }}\">
         </label>
       </div>
       <div class=\"field\">
         <label for=\"color_pelo\" >Color de pelo:
             <select name=\"color_pelo\"\">
-              <option  value=\"marron\">Marrón</option>
-              <option  value=\"negro\">Negro</option>
-              <option  value=\"amarillo\">Amarillo</option>
-              <option  value=\"rojo\" >Rojo</option>
-              <option  value=\"calvo\">Calvo</option>
+             <option value=\"{{turnoX.color_pelo}}\">{{turnoX.color_pelo}}</option>\"
+              <option  value=\"marron\">marrón</option>
+              <option  value=\"negro\">negro</option>
+              <option  value=\"amarillo\">amarillo</option>
+              <option  value=\"rojo\" >rojo</option>
+              <option  value=\"calvo\">calvo</option>
             </select>
         </label>
       </div>
@@ -392,20 +411,15 @@ class __TwigTemplate_7b3e0caffec5a531b0fc795c9a578ca417ada05f66460f68a6f53387a5a
     <section class=\"fieldsTurno\">
     <div class=\"field\">
         <label for=\"fecha_turno\"> fecha turno:
-            <input type=\"date\" name=\"fecha_turno\" required value=\"{{ fecha_turno }}\">
+            <input type=\"date\" name=\"fecha_turno\" required value=\"{{ turnoX.fecha_turno }}\">
         </label>
     </div>
     <div class=\"field\">
         <label for=\"hora_turno\">   hora turno:
-            <input type=\"time\" name=\"hora_turno\" value=\"{{ hora_turno }}\" >
+            <input type=\"time\" name=\"hora_turno\" value=\"{{ turnoX.hora_turno }}\" >
         </label>
     </div>
 
-    <div class=\"field\">
-        <label for=\"diagnostico\">Adjuntar diagnostico:
-            <input name=\"diagnostico\" type=\"file\" >
-        </label>
-    </div>
     </section>
 
     <section class=\"botonesForm\">
@@ -414,6 +428,6 @@ class __TwigTemplate_7b3e0caffec5a531b0fc795c9a578ca417ada05f66460f68a6f53387a5a
     </section>
 </form>
 {% endblock %}
-", "turnos.create.html", "C:\\Users\\Maxi\\Downloads\\PAWTP4(2)\\paw-tp4-master\\4 - copia\\app\\views\\turnos.create.html");
+", "turnoModificar.html", "C:\\Users\\Maxi\\Downloads\\PAWTP4(2)\\paw-tp4-master\\4 - copia\\app\\views\\turnoModificar.html");
     }
 }

@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}Lista de Tareas{% endblock %}
+{% block title %}Lista de Turnos{% endblock %}
 
 {% block header %}
     {{ include('partials/nav.html') }}
@@ -9,24 +9,36 @@
 {% block head %}
     {{ parent() }}
     <meta name="keywords" content="PAW,2018,Templates,PHP">
+     <link href="public/style.css" type="text/css" rel="stylesheet" />
 {% endblock %}
 
 {% block main %}
+
+{% for diag in diagnosticos %}
+     <img src="data:image/png;base64,{{diag.diagnostico}}">
+{% endfor %}
+
+<div class="verTurnos">
 <h2>Turnos</h2>
 <table>
-<tr>
-    <td> id </td>
-    <td> paciente </td>
-    <td> email </td>
-    <td> telefono </td>
-    <td> edad </td>
-    <td> talla_calzado</td>
-    <td> altura </td>
-    <td> fecha_nacimiento</td>
-    <td> color_pelo </td>
-    <td> fecha_turno </td>
-    <td> hora_turno </td>
-</tr>
+{% if turnos %}
+   <tr class="campos">
+        <td> id </td>
+        <td> paciente </td>
+        <td> email </td>
+        <td> telefono </td>
+        <td> edad </td>
+        <td> talla_calzado</td>
+        <td> altura </td>
+        <td> fecha_nacimiento</td>
+        <td> color_pelo </td>
+        <td> fecha_turno </td>
+        <td> hora_turno </td>
+        <td> ficha </td>
+        <td> Eliminación </td>
+        <td>Modificación</td>
+    </tr>
+{% endif %}
 {% for turno in turnos %}
 <tr>
     <td>{{ turno.id }}</td>
@@ -40,9 +52,14 @@
     <td>{{ turno.color_pelo }}</td>
     <td>{{ turno.fecha_turno }}</td>
     <td>{{ turno.hora_turno }}</td>
+    <td><a href="/turnos/ficha?id={{turno.id}}">  link </a> </td>
+    <td><a href="/turnos/eliminar?id={{turno.id}}">  Eliminar </a> </td>
+    <td><a href="/turnos/modificar?id={{turno.id}}">  Modificar </a> </td>
+    
 </tr>
 {% else %}
 <span>No hay turnos registrados</span>
 {% endfor %}
 </table>
+</div>
 {% endblock %}

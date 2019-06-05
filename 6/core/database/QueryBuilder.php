@@ -36,13 +36,21 @@ class QueryBuilder
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
-    
-    public function select($table,$id){
-        $statement = $this->pdo->prepare("select * from {$table} where id = {$id}");
+
+    public function selectAtributeByID($id,$atribute,$table)
+    {
+        $statement = $this->pdo->prepare("select {$atribute} from {$table} where id={$id}");
         $statement->execute();
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
-
+    
+    
+    public function selectByID($id,$table)
+    {
+        $statement = $this->pdo->prepare("select * from {$table} where id={$id}");
+        $statement->execute();
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
     /**
      * Insert a record into a table.
      *
@@ -52,23 +60,45 @@ class QueryBuilder
     public function insert($table, $parameters)
     {
         $parameters = $this->cleanParameterName($parameters);
-        echo $parameters['fecha_nacimiento'];
+        
         $sql = sprintf(
             'insert into %s (%s) values (%s)',
             $table,
             implode(', ', array_keys($parameters)),
             ':' . implode(', :', array_keys($parameters))
         );
-        echo $sql;
+
         try {
+          
             $statement = $this->pdo->prepare($sql);
+            
             $statement->execute($parameters);
         } catch (Exception $e) {
             $this->sendToLog($e);
         }
     }
+
+    private function sendToLog(Exception $e)
+    {
+        if ($this->logger) {
+            $this->logger->error('Error', ["Error" => $e]);
+        }
+    }
+
     
-    public function upload($table, $parameters, $id)
+    
+     public function delete($table,$id){
+        try{
+            $sql = "DELETE FROM {$table} WHERE id = {$id}";
+            $statement = $this->pdo->prepare($sql);
+            $statement->execute();
+            
+        }catch (Exception $e) {
+            $this->sendToLog($e);
+        }
+    }
+    
+   public function upload($table, $parameters, $id)
     {
         $parameters = $this->cleanParameterName($parameters);
         $sql="UPDATE {$table} SET paciente = :paciente,email = :email,
@@ -85,24 +115,6 @@ class QueryBuilder
         }
     }
     
-    public function delete($table,$id){
-        try{
-            $sql = "DELETE FROM {$table} WHERE id = {$id}";
-            $statement = $this->pdo->prepare($sql);
-            $statement->execute();
-            
-        }catch (Exception $e) {
-            $this->sendToLog($e);
-        }
-    }
-
-    private function sendToLog(Exception $e)
-    {
-        if ($this->logger) {
-            $this->logger->error('Error', ["Error" => $e]);
-        }
-    }
-
     /**
      * Limpia guiones - que puedan venir en los nombre de los parametros
      * ya que esto no funciona con PDO

@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% block title %}Crear Nuevo Turno{% endblock %}
+
+{% block header %}
+    {{ include('partials/nav.html') }}
+{% endblock %}
+
+{% block head %}
+    {{ parent() }}
+    <meta name="keywords" content="PAW,2018,Templates,PHP">
+    <link href="public/style.css" type="text/css" rel="stylesheet" />
+{% endblock %}
+
+{% block main %}
+{% if errores is not empty %}
+  <section class="camposErroneos">
+      <div class="tituloCamposErroneos"> Campos Erroneos: </div>
+      {% if errores['paciente'] %}
+        <div> <b>Paciente: </b> {{ errores['paciente'] }} </div>
+      {% endif %}
+      {% if errores['edad'] %}
+        <div> <b>Edad: </b> {{ errores['edad'] }} </div>
+      {% endif %}
+      {% if errores['email'] %}
+        <div> <b>Email: </b> {{ errores['email'] }} </div>
+      {% endif %}
+      {% if errores['talla_calzado'] %}
+        <div> <b>Talla Calzado: </b> {{ errores['talla_calzado'] }} </div>
+      {% endif %}
+      {% if errores['altura'] %}
+        <div> <b>Altura: </b> {{ errores['altura'] }} </div>
+      {% endif %}
+      {% if errores['fecha_nacimiento'] %}
+        <div> <b>Fecha de Nacimiento: </b> {{ errores['fecha_nacimiento'] }} </div>
+      {% endif %}
+      {% if errores['color_pelo'] %}
+        <div> <b>Color de pelo: </b> {{ errores['color_pelo'] }} </div>
+      {% endif %}
+      {% if errores['fecha_turno'] %}
+        <div> <b>Fecha turno: </b> {{ errores['fecha_turno'] }} </div>
+      {% endif %}
+      {% if errores['hora_turno'] %}
+        <div> <b>Hora turno: </b> {{ errores['hora_turno'] }} </div>
+      {% endif %}
+      {% if errores['diagnostico'] %}
+        <div> <b>Diagnostico: </b> {{ errores['diagnostico'] }} </div>
+      {% endif %}
+  </section>
+{% endif %}
+
+<h2>Modificar Turno</h2>
+<form action="/turnos/validateM" method="POST" enctype="multipart/form-data">
+   
+    <section class="fieldsPaciente">
+        <div class="field">
+        <label for="id"> ID:
+            <input type="text" name="id" readonly= "readonly" required value="{{ turnoX.id }}">
+        </label>
+    </div>
+       
+       <div class="field">
+        <label for="paciente"> Nombre paciente:
+            <input type="text" name="paciente" required value="{{ turnoX.paciente }}">
+        </label>
+    </div>
+    <div class="field">
+        <label for="email">   email:
+            <input type="email" name="email" required value="{{ turnoX.email }}">
+        </label>
+    </div>
+    <div class="field">
+        <label for="telefono">   telefono:
+            <input type="text" name="telefono" required value="{{ turnoX.telefono }}">
+        </label>
+    </div>
+
+      <div class="field">
+        <label for="edad" >Edad:
+            <input name="edad" type="number" min=0 max=130 value="{{ turnoX.edad }}">
+        </label>
+      </div>
+      <div class="field">
+        <label for="talla_calzado" >Talla de calzado:
+                <input name="talla_calzado" type="number" min=20 max=50 value="{{ turnoX.talla_calzado }}">
+        </label>
+      </div>
+      <div class="field">
+        <label for="altura" >Altura (cm):
+            <input name="altura" type="number" value="{{ turnoX.altura }}">
+        </label>
+      </div>
+      <div class="field">
+        <label for="fecha_nacimiento">fecha de nacimiento:
+            <input name="fecha_nacimiento" type="date" required="required" value="{{ turnoX.fecha_nacimiento }}">
+        </label>
+      </div>
+      <div class="field">
+        <label for="color_pelo" >Color de pelo:
+            <select name="color_pelo"">
+             <option value="{{turnoX.color_pelo}}">{{turnoX.color_pelo}}</option>"
+              <option  value="marron">marrón</option>
+              <option  value="negro">negro</option>
+              <option  value="amarillo">amarillo</option>
+              <option  value="rojo" >rojo</option>
+              <option  value="calvo">calvo</option>
+            </select>
+        </label>
+      </div>
+    </section>
+
+    <section class="fieldsTurno">
+    <div class="field">
+        <label for="fecha_turno"> fecha turno:
+            <input type="date" name="fecha_turno" required value="{{ turnoX.fecha_turno }}">
+        </label>
+    </div>
+    <div class="field">
+        <label for="hora_turno">   hora turno:
+            <input type="time" name="hora_turno" value="{{ turnoX.hora_turno }}" >
+        </label>
+    </div>
+
+    </section>
+
+    <section class="botonesForm">
+        <input type="submit" name="Enviar">
+        <input  class="controls" type="reset" value="Resetear">
+    </section>
+</form>
+{% endblock %}

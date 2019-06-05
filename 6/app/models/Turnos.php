@@ -12,7 +12,19 @@ class Turnos extends Model
     {
         return $this->db->selectAll($this->table);
     }
-
+    
+    public function getDiagnostico($idTurno)
+    {
+        $atribute = 'diagnostico';
+        return $this->db->selectAtributeByID($idTurno,$atribute, $this->table);
+    }
+    
+    
+    public function getTurno($idTurno)
+    {
+        return $this->db->selectByID($idTurno, $this->table);
+    }
+    
     public function insert(array $turno)
     {
         $this->db->insert($this->table, $turno);
@@ -22,13 +34,8 @@ class Turnos extends Model
         $this->db->delete($this->table, $id);
     }
     
-    public function getId($id){
-        return $this->db->select($this->table, $id);
-        
-    
-    }
-    
     public function upload(array $turno,$id){
         $this->db->upload($this->table,$turno,$id);
     }
+    
 }

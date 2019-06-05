@@ -1,7 +1,7 @@
 <?php
 
-/* turnoReservado.html */
-class __TwigTemplate_92051c49a20e3c250b8ff8bf0d370d3f61e62539e56aab0b1cabf260d5b96807 extends Twig_Template
+/* turnoModificado.html */
+class __TwigTemplate_c38654825777edab4daea14cca4c1348f4eebf46b5109de1ba24bfed109ba27e extends Twig_Template
 {
     private $source;
 
@@ -12,7 +12,7 @@ class __TwigTemplate_92051c49a20e3c250b8ff8bf0d370d3f61e62539e56aab0b1cabf260d5b
         $this->source = $this->getSourceContext();
 
         // line 1
-        $this->parent = $this->loadTemplate("base.html", "turnoReservado.html", 1);
+        $this->parent = $this->loadTemplate("base.html", "turnoModificado.html", 1);
         $this->blocks = array(
             'title' => array($this, 'block_title'),
             'header' => array($this, 'block_header'),
@@ -63,7 +63,7 @@ class __TwigTemplate_92051c49a20e3c250b8ff8bf0d370d3f61e62539e56aab0b1cabf260d5b
     public function block_main($context, array $blocks = array())
     {
         // line 16
-        echo "<h2>Turno reservado </h2>
+        echo "<h2>Turno Modificado </h2>
 <h3>Gracias por atenderse con nosotros. </h3>
  <div class=\"turno\">
   <section class=\"fieldsPaciente\">
@@ -152,15 +152,8 @@ class __TwigTemplate_92051c49a20e3c250b8ff8bf0d370d3f61e62539e56aab0b1cabf260d5b
         echo "
             </label>
         </div>
-        <br>
-            <div class=\"field imagen\">
-              <label>  <b> diagnostico: </b>
-                <div> <img src=\"data:image/png;base64,";
-        // line 78
-        echo twig_escape_filter($this->env, ($context["diag"] ?? null), "html", null, true);
-        echo "\"></div>
-              </label>
-            </div>
+        
+            
      </section>
 </div>
 
@@ -169,7 +162,7 @@ class __TwigTemplate_92051c49a20e3c250b8ff8bf0d370d3f61e62539e56aab0b1cabf260d5b
 
     public function getTemplateName()
     {
-        return "turnoReservado.html";
+        return "turnoModificado.html";
     }
 
     public function isTraitable()
@@ -179,7 +172,7 @@ class __TwigTemplate_92051c49a20e3c250b8ff8bf0d370d3f61e62539e56aab0b1cabf260d5b
 
     public function getDebugInfo()
     {
-        return array (  160 => 78,  151 => 72,  143 => 67,  132 => 59,  124 => 54,  116 => 49,  108 => 44,  100 => 39,  91 => 33,  83 => 28,  75 => 23,  66 => 16,  63 => 15,  54 => 10,  51 => 9,  44 => 6,  41 => 5,  35 => 3,  15 => 1,);
+        return array (  151 => 72,  143 => 67,  132 => 59,  124 => 54,  116 => 49,  108 => 44,  100 => 39,  91 => 33,  83 => 28,  75 => 23,  66 => 16,  63 => 15,  54 => 10,  51 => 9,  44 => 6,  41 => 5,  35 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -199,7 +192,7 @@ class __TwigTemplate_92051c49a20e3c250b8ff8bf0d370d3f61e62539e56aab0b1cabf260d5b
 {% endblock %}
 
 {% block main %}
-<h2>Turno reservado </h2>
+<h2>Turno Modificado </h2>
 <h3>Gracias por atenderse con nosotros. </h3>
  <div class=\"turno\">
   <section class=\"fieldsPaciente\">
@@ -258,16 +251,12 @@ class __TwigTemplate_92051c49a20e3c250b8ff8bf0d370d3f61e62539e56aab0b1cabf260d5b
                     {{turnoX.hora_turno}}
             </label>
         </div>
-        <br>
-            <div class=\"field imagen\">
-              <label>  <b> diagnostico: </b>
-                <div> <img src=\"data:image/png;base64,{{diag}}\"></div>
-              </label>
-            </div>
+        
+            
      </section>
 </div>
 
 {% endblock %}
-", "turnoReservado.html", "C:\\Users\\Maxi\\Downloads\\PAWTP4(2)\\paw-tp4-master\\4\\app\\views\\turnoReservado.html");
+", "turnoModificado.html", "C:\\Users\\Maxi\\Downloads\\PAWTP4(2)\\paw-tp4-master\\4 - copia\\app\\views\\turnoModificado.html");
     }
 }

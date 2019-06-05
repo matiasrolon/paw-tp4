@@ -21,23 +21,21 @@ class __TwigTemplate_bbe4a72da1951c38efd61304b56a292c1648b28f164ba0c9e609b234455
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
+        echo "
+";
+        // line 2
         $this->displayBlock('nav', $context, $blocks);
     }
 
     public function block_nav($context, array $blocks = array())
     {
-        // line 2
-        echo "    <ul>
-        <li><a href=\"/\">Home</a></li>
-        <li><a href=\"/about\">Sobre la pagina</a></li>
-        <li>Admin Turnos
-           <ul>
-               <li><a href=\"/turnos\">ver Turnos</a></li>
-                <li><a href=\"/turnos/create\">Crear Turnos</a></li>
-                <li><a href=\"/turnos/delete\">Eliminar Turno</a></li>
-                <li><a href=\"/turnos/modificar\">Modificar Turno</a></li>
-           </ul>
-        </li>
+        // line 3
+        echo "    <ul class=\"menu\">
+        <li class=\"item_menu\"><a href=\"/\">Home</a></li>
+        <li class=\"item_menu\"><a href=\"/turnos\">Turnos</a></li>
+        <li class=\"item_menu\"><a href=\"/turnos/create\">Solicitar Turno</a></li>
+         <li class=\"item_menu\"><a href=\"/about\">Sobre la pagina</a></li>
+           
     </ul>
 ";
     }
@@ -49,25 +47,21 @@ class __TwigTemplate_bbe4a72da1951c38efd61304b56a292c1648b28f164ba0c9e609b234455
 
     public function getDebugInfo()
     {
-        return array (  30 => 2,  24 => 1,);
+        return array (  33 => 3,  27 => 2,  24 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Twig_Source("{% block nav %}
-    <ul>
-        <li><a href=\"/\">Home</a></li>
-        <li><a href=\"/about\">Sobre la pagina</a></li>
-        <li>Admin Turnos
-           <ul>
-               <li><a href=\"/turnos\">ver Turnos</a></li>
-                <li><a href=\"/turnos/create\">Crear Turnos</a></li>
-                <li><a href=\"/turnos/delete\">Eliminar Turno</a></li>
-                <li><a href=\"/turnos/modificar\">Modificar Turno</a></li>
-           </ul>
-        </li>
+        return new Twig_Source("
+{% block nav %}
+    <ul class=\"menu\">
+        <li class=\"item_menu\"><a href=\"/\">Home</a></li>
+        <li class=\"item_menu\"><a href=\"/turnos\">Turnos</a></li>
+        <li class=\"item_menu\"><a href=\"/turnos/create\">Solicitar Turno</a></li>
+         <li class=\"item_menu\"><a href=\"/about\">Sobre la pagina</a></li>
+           
     </ul>
 {% endblock %}
-", "partials/nav.html", "C:\\Users\\Maxi\\Downloads\\paw-tp4-master\\3\\app\\views\\partials\\nav.html");
+", "partials/nav.html", "C:\\Users\\Maxi\\Desktop\\6\\app\\views\\partials\\nav.html");
     }
 }

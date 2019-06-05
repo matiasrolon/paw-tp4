@@ -15,8 +15,8 @@ class __TwigTemplate_c46ab31beca99da74ea3202ea2c353a38e43691388ce6d6894d75c4fba6
         $this->parent = $this->loadTemplate("base.html", "index.html", 1);
         $this->blocks = array(
             'title' => array($this, 'block_title'),
-            'header' => array($this, 'block_header'),
             'head' => array($this, 'block_head'),
+            'header' => array($this, 'block_header'),
             'main' => array($this, 'block_main'),
         );
     }
@@ -38,19 +38,9 @@ class __TwigTemplate_c46ab31beca99da74ea3202ea2c353a38e43691388ce6d6894d75c4fba6
     }
 
     // line 5
-    public function block_header($context, array $blocks = array())
-    {
-        // line 6
-        echo "    ";
-        echo twig_include($this->env, $context, "partials/nav.html");
-        echo "
-";
-    }
-
-    // line 9
     public function block_head($context, array $blocks = array())
     {
-        // line 10
+        // line 6
         echo "    ";
         $this->displayParentBlock("head", $context, $blocks);
         echo "
@@ -58,11 +48,24 @@ class __TwigTemplate_c46ab31beca99da74ea3202ea2c353a38e43691388ce6d6894d75c4fba6
 ";
     }
 
+    // line 10
+    public function block_header($context, array $blocks = array())
+    {
+        // line 11
+        echo "    ";
+        echo twig_include($this->env, $context, "partials/nav.html");
+        echo "
+";
+    }
+
     // line 14
     public function block_main($context, array $blocks = array())
     {
         // line 15
-        echo "<h1>Punto 3 de TP4 - PAW 2018  ( UNLu )</h1>
+        echo "<div class=\"home\">
+    <h1 class=\"presentacion\"> Punto 6 de TP4</h1>
+    <h2 class=\"presentacion\"> PAW 2018  ( UNLu )</h2>
+</div>
 ";
     }
 
@@ -78,7 +81,7 @@ class __TwigTemplate_c46ab31beca99da74ea3202ea2c353a38e43691388ce6d6894d75c4fba6
 
     public function getDebugInfo()
     {
-        return array (  65 => 15,  62 => 14,  54 => 10,  51 => 9,  44 => 6,  41 => 5,  35 => 3,  15 => 1,);
+        return array (  65 => 15,  62 => 14,  55 => 11,  52 => 10,  44 => 6,  41 => 5,  35 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -87,19 +90,22 @@ class __TwigTemplate_c46ab31beca99da74ea3202ea2c353a38e43691388ce6d6894d75c4fba6
 
 {% block title %}Home{% endblock %}
 
-{% block header %}
-    {{ include('partials/nav.html') }}
-{% endblock %}
-
 {% block head %}
     {{ parent() }}
     <meta name=\"keywords\" content=\"PAW,2018,Templates,PHP\">
 {% endblock %}
 
-{% block main %}
-<h1>Punto 3 de TP4 - PAW 2018  ( UNLu )</h1>
+{% block header %}
+    {{ include('partials/nav.html') }}
 {% endblock %}
 
-", "index.html", "C:\\Users\\Maxi\\Downloads\\paw-tp4-master\\3\\app\\views\\index.html");
+{% block main %}
+<div class=\"home\">
+    <h1 class=\"presentacion\"> Punto 6 de TP4</h1>
+    <h2 class=\"presentacion\"> PAW 2018  ( UNLu )</h2>
+</div>
+{% endblock %}
+
+", "index.html", "C:\\Users\\Maxi\\Desktop\\6\\app\\views\\index.html");
     }
 }

@@ -13,12 +13,11 @@
 {% endblock %}
 
 {% block main %}
-<h2>Turno reservado </h2>
-<h3>Gracias por atenderse con nosotros. </h3>
- <div class="turno">
+      <h2>Informacion del turno </h2>
+<div class="turno">
   <section class="fieldsPaciente">
        <div class="field">
-            <label>
+            <label> 
                <b>Paciente:</b>
                 {{turnoX.paciente}}
             </label>
@@ -44,6 +43,7 @@
             {{turnoX.talla_calzado}}
             </label>
         </div>
+
         <div class="field">
             <label>  <b> altura: </b>
             {{turnoX.altura}}
@@ -59,9 +59,9 @@
             {{turnoX.color_pelo}}
             </label>
         </div>
-    </section>
-
-    <section class="fieldsTurno">
+     </section>
+     
+    <section class="fieldsTurno">       
         <div class="field">
             <label> <b> fecha del turno: </b>
                         {{turnoX.fecha_turno}}
@@ -73,12 +73,11 @@
             </label>
         </div>
         <br>
-            <div class="field imagen">
-              <label>  <b> diagnostico: </b>
-                <div> <img src="data:image/png;base64,{{diag}}"></div>
-              </label>
-            </div>
-     </section>
-</div>
-
+        <div class="field imagen">
+            <label>  <b> diagnostico: </b> </label>
+            <div> <img src="data:image/png;base64,{{diag}}"></div>
+        </div>
+    </section>      
+    
+</div>    
 {% endblock %}

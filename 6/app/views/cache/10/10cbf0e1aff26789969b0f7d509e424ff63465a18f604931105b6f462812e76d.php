@@ -37,6 +37,6 @@ class __TwigTemplate_d60532dd1d0e760261cd5222a607508761163e110a51920945ecc221aa4
     public function getSourceContext()
     {
         return new Twig_Source("<h1>500 - Internal Server Error</h1>
-", "internal-error.html", "C:\\Users\\Maxi\\Downloads\\paw-tp4-master\\3\\app\\views\\internal-error.html");
+", "internal-error.html", "C:\\Users\\Maxi\\Downloads\\PAWTP4(2)\\paw-tp4-master\\4 - copia\\app\\views\\internal-error.html");
     }
 }

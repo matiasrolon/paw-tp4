@@ -32,23 +32,23 @@ class __TwigTemplate_00dbe24a4e11b03d1d2d9dceef4a180f09f03b165eeb39fab4fac4f416c
     ";
         // line 4
         $this->displayBlock('head', $context, $blocks);
-        // line 8
+        // line 9
         echo "</head>
 <body>
     <header>";
-        // line 10
+        // line 11
         $this->displayBlock('header', $context, $blocks);
         echo "</header>
     <nav>";
-        // line 11
+        // line 12
         $this->displayBlock('nav', $context, $blocks);
         echo "</nav>
     <main>";
-        // line 12
+        // line 13
         $this->displayBlock('main', $context, $blocks);
         echo "</main>
     <footer>";
-        // line 13
+        // line 14
         $this->displayBlock('footer', $context, $blocks);
         echo "</footer>
 </body>
@@ -61,8 +61,9 @@ class __TwigTemplate_00dbe24a4e11b03d1d2d9dceef4a180f09f03b165eeb39fab4fac4f416c
     {
         // line 5
         echo "        <meta charset=\"utf-8\">
+        <link rel=\"stylesheet\" href=\"/public/style.css\">
         <title>";
-        // line 6
+        // line 7
         $this->displayBlock('title', $context, $blocks);
         echo " - PAW 2018</title>
     ";
@@ -72,22 +73,22 @@ class __TwigTemplate_00dbe24a4e11b03d1d2d9dceef4a180f09f03b165eeb39fab4fac4f416c
     {
     }
 
-    // line 10
+    // line 11
     public function block_header($context, array $blocks = array())
     {
     }
 
-    // line 11
+    // line 12
     public function block_nav($context, array $blocks = array())
     {
     }
 
-    // line 12
+    // line 13
     public function block_main($context, array $blocks = array())
     {
     }
 
-    // line 13
+    // line 14
     public function block_footer($context, array $blocks = array())
     {
     }
@@ -99,7 +100,7 @@ class __TwigTemplate_00dbe24a4e11b03d1d2d9dceef4a180f09f03b165eeb39fab4fac4f416c
 
     public function getDebugInfo()
     {
-        return array (  91 => 13,  86 => 12,  81 => 11,  76 => 10,  66 => 6,  63 => 5,  60 => 4,  52 => 13,  48 => 12,  44 => 11,  40 => 10,  36 => 8,  34 => 4,  29 => 1,);
+        return array (  92 => 14,  87 => 13,  82 => 12,  77 => 11,  67 => 7,  63 => 5,  60 => 4,  52 => 14,  48 => 13,  44 => 12,  40 => 11,  36 => 9,  34 => 4,  29 => 1,);
     }
 
     public function getSourceContext()
@@ -109,6 +110,7 @@ class __TwigTemplate_00dbe24a4e11b03d1d2d9dceef4a180f09f03b165eeb39fab4fac4f416c
 <head>
     {% block head %}
         <meta charset=\"utf-8\">
+        <link rel=\"stylesheet\" href=\"/public/style.css\">
         <title>{% block title %}{% endblock %} - PAW 2018</title>
     {% endblock %}
 </head>
@@ -119,6 +121,6 @@ class __TwigTemplate_00dbe24a4e11b03d1d2d9dceef4a180f09f03b165eeb39fab4fac4f416c
     <footer>{% block footer %}{% endblock %}</footer>
 </body>
 </html>
-", "base.html", "C:\\Users\\Maxi\\Downloads\\paw-tp4-master\\3\\app\\views\\base.html");
+", "base.html", "C:\\Users\\Maxi\\Desktop\\6\\app\\views\\base.html");
     }
 }
